@@ -1,0 +1,7 @@
+# Tests that a graph can be created.
+
+# Create a graph
+created graph empty_graph
+
+# Print the nodes in the graph
+empty_graph contains:

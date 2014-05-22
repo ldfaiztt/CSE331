@@ -1,0 +1,8 @@
+# Tests build oneNodeGraph.
+
+# Load oneNodeGraph.tsv
+LoadGraph one_node_graph oneNodeGraph.tsv
+
+# Print the nodes in the graph and the outgoing edges from onlyNode
+ListNodes one_node_graph
+ListChildren one_node_graph onlyNode

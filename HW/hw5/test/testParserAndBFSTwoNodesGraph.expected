@@ -1,0 +1,13 @@
+# test parser and BFS on two nodes graph
+
+# build graph
+loaded graph twoNodesGraph
+
+# check graph is built correctly
+twoNodesGraph contains: node1 node2
+the children of node1 in twoNodesGraph are:
+the children of node2 in twoNodesGraph are:
+
+# check BFS
+path from node1 to node2:
+no path found

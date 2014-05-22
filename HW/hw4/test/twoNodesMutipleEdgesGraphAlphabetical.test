@@ -1,0 +1,24 @@
+# Same as twoNodesMultipleEdgesGraph.test, but 
+# adding nodes in reverse order and adding edges 
+# in non-alphabetical order to test if it prints 
+# out in alphabetical order
+
+# Create a graph
+CreateGraph two_nodes_multiple_edges_graph_alphabetical
+
+# Add two nodes in reverse order
+AddNode two_nodes_multiple_edges_graph_alphabetical b
+AddNode two_nodes_multiple_edges_graph_alphabetical a
+
+# Add five edges in non-alphabetical order
+AddEdge two_nodes_multiple_edges_graph_alphabetical a b AB1
+AddEdge two_nodes_multiple_edges_graph_alphabetical b b BB
+AddEdge two_nodes_multiple_edges_graph_alphabetical a b AB2
+AddEdge two_nodes_multiple_edges_graph_alphabetical b a BA
+AddEdge two_nodes_multiple_edges_graph_alphabetical a a AA
+
+# Print the nodes in the graph, the outgoing edges from a, 
+# and outgoing edges from b
+ListNodes two_nodes_multiple_edges_graph_alphabetical
+ListChildren two_nodes_multiple_edges_graph_alphabetical a
+ListChildren two_nodes_multiple_edges_graph_alphabetical b

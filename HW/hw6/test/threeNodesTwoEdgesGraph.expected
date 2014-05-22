@@ -1,0 +1,10 @@
+# Tests build threeNodesTwoEdgesGraph
+
+# Load threeNodesTwoEdgesGraph.tsv
+loaded graph three_nodes_two_edges_graph
+
+# Check if build graph is correct
+three_nodes_two_edges_graph contains: node1 node2 node3
+the children of node1 in three_nodes_two_edges_graph are: node2(1.000)
+the children of node2 in three_nodes_two_edges_graph are: node1(1.000)
+the children of node3 in three_nodes_two_edges_graph are:

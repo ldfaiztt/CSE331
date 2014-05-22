@@ -1,0 +1,56 @@
+Chun-Wei Chen
+CSE 331
+Homework 4 - Problem 1
+05/05/13
+
+a.
+IntQueue1:
+Rep invariant:
+entries != null and entries has no nulls
+
+Abstraction function:
+AF(this) = Queue<Integer> such that 
+           queue = entries = [] if no elements in entries
+           queue = entries = [a1, a2, ..., a_k] o.w. 
+           where k is # of elements in entries
+
+IntQueue2:
+Rep invariant:
+entries != null, size >= 0, 
+front >= 0 and front <= |entries| - 1 (a.k.a entries.length - 1)
+
+Abstraction function:
+AF(this) = Queue<Integer> such that 
+    entries = [a1, a2, ..., a_k], front = i, size = n
+    queue = [] if size == 0
+    queue = [a_(i+1), ..., a_(i+n)] if front+size <= |entries|
+    queue = [a_(i+1), ..., a_k, a1, ..., a_(k-i)] if front+size <= |entries|
+
+b.
+queue_a = [1, 2]
+queue_b = [2, 3, 4]
+queue_c = [1, 2, 3]
+queue_d = [1, 2]
+queue_e = [1, 2, 3, 4]
+queue_f = [1, 2, 3]
+queue_g = [1, 2]
+queue_h = [2, 3, 4]
+a, d and g are equivalent.
+b and h are equivalent.
+c and f are equivalent.
+
+c.
+1. This doesn't contain potential representation exposure since this method 
+   only takes and returns primitive data types rather than mutable objects.
+2. This contains potential representation exposure since return type is 
+   String[] and array is mutable.
+3. If Date is mutable and the returned Date is not the copy of the original 
+   Date, then this method contains  representation exposure.
+4. This doesn't contain potential representation exposure since the return 
+   type String is immutable.
+5. If the returned Iterator references to original collection and supports 
+   remove method, this method contains representation exposure since the 
+   client can remove the Integer in the collection while iterate through it.
+6. If the method doesn't make a copy of the argument cards on the way in, 
+   then this method contains  representation exposure since the client can 
+   change cards afterwards to mess up Deck's rep invariant.

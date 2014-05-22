@@ -1,0 +1,19 @@
+# Tests adding two nodes, one reflexive edge 
+# and one edge between two nodes to graph.
+
+# Create a graph
+CreateGraph two_nodes_two_edges_graph1
+
+# Add two nodes
+AddNode two_nodes_two_edges_graph1 a
+AddNode two_nodes_two_edges_graph1 b
+
+# Add two edges (including one reflexive edge)
+AddEdge two_nodes_two_edges_graph1 a a AA
+AddEdge two_nodes_two_edges_graph1 a b AB
+
+# Print the nodes in the graph, the outgoing edges from a, 
+# and outgoing edges from b
+ListNodes two_nodes_two_edges_graph1
+ListChildren two_nodes_two_edges_graph1 a
+ListChildren two_nodes_two_edges_graph1 b

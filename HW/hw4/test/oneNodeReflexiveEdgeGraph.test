@@ -1,0 +1,14 @@
+# Tests adding one node, reflexive edge to graph
+
+# Create a graph
+CreateGraph one_node_one_edge_graph
+
+# Add a node
+AddNode one_node_one_edge_graph a
+
+# Add an edge
+AddEdge one_node_one_edge_graph a a AA
+
+# Print the nodes in the graph and the outgoing edges from a
+ListNodes one_node_one_edge_graph
+ListChildren one_node_one_edge_graph a

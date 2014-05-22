@@ -1,0 +1,9 @@
+Chun-Wei Chen
+CSE 331
+Homework 5
+05/13/13
+
+I changed my implementation of graph from TreeMap<String, TreeSet<LabeledEdge>> 
+to HashMap<String, HashSet<LabeledEdge>> since HashMap and HashSet have better 
+performance (constant-time performance) for the basic operations (get and put). 
+I also add /*@NonNull*/ and /*@Nullable*/ tags to satisfy the nullness checker.

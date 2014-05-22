@@ -1,0 +1,25 @@
+# Sample testing file.
+# Tests that a graph can be created, a pair of nodes and
+# an edge between them can be added, and a pair of nodes
+# and a single edge can be printed out.
+
+# We provide this test purely for you to verify your
+# implementation of a variety of test script commands.
+# This is NOT an example of a properly low-granularity test
+# case, nor is it intended to be! Your tests, unlike this
+# one, should only test one condition per file. The name and
+# comments of your files should describe the condition being tested.
+
+# Create a graph
+CreateGraph graph1
+
+# Add a pair of nodes
+AddNode graph1 n1
+AddNode graph1 n2
+
+# Add an edge
+AddEdge graph1 n1 n2 e1
+
+# Print the nodes in the graph and the outgoing edges from n1
+ListNodes graph1
+ListChildren graph1 n1

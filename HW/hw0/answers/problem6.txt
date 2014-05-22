@@ -1,0 +1,7 @@
+Chun-Wei Chen
+CSE 331
+04/01/13
+
+1. Input 0 to getFibTerm method is expected to return 1, but it throws exception. I changed the condition for the if block to "n < 0" and also changed the condition for the else if block to "n < 2" to fix the problem.
+2. Same as the problem in question 1. Input 0 to getFibTerm method is expected to return 1, but it throws exception.
+3. The expected Fibonacci term for input 2 is 2, but the actual output for input 2 is 0. I changed the the return statement in the else block to "getFibTerm(n - 1) + getFibTerm(n - 2)" to fix it.

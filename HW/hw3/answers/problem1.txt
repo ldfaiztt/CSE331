@@ -1,0 +1,43 @@
+Chun-Wei Chen
+CSE 331
+Homework 3
+04/19/13
+
+a. Explain what the return statement, which is creating a new RatNum 
+   object with appropriate arguments, does.
+   
+b. If this is null, it will throw NullPointerException instantly when 
+   the method is called, which is before trying to access the instance 
+   variable; therefore, there's no need to check this != null.
+   
+c. If the argument passed to add and mul is NaN, they will return NaN 
+   because the result's denominator is 0 due to multiply with NaN's 0 
+   denominator. div needs to check if the argument is NaN in order to 
+   satisfy, "Any arithmetic operation involving 'NaN' will return 'NaN,'" 
+   since the multiplication with argument's numerator is in the result's 
+   numerator, which will result in zero instead of NaN.
+   
+d. It's a static method since it doesn't access to instance variables of 
+   RatNum. An alternative way would be to make a new constructor which 
+   takes a string as argument.
+   
+e. Constructor with two parameters should remove gcd part in order to 
+   satisfy new rep invariant, which is more efficient since it can now 
+   construct a RatNum in O(1). equals and hashCode need to use gcd inside 
+   the method in order to return true or same hashcode for same rational 
+   number, such as 1/2 and 2/4, which makes them less efficient due to 
+   adding gcd. toString also needs to use gcd in order to satisfy the 
+   spec, which makes it less efficient because of gcd method which 
+   contains a loop.
+   
+f. It fails to meet the specification since the specification doesn't 
+   have modifies clause says that this is modified by the method. It 
+   also fails to meet class specifications since the class 
+   specification says RatNum represents an immutable rational number 
+   while the new version of the method does mutate it.
+   
+g. Since there's no mutator method in RatNum class, the instance 
+   variables of RatNum are declared as final, which can only be 
+   initialized once, and all methods of arithmetic return a new RatNum 
+   object without modifying original object(s); therefore, checkRep at 
+   the end of constructor is sufficient to hold rep invariant.																 

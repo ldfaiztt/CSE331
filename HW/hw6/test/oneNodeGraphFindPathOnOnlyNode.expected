@@ -1,0 +1,8 @@
+# Tests find path on one_node_graph
+
+# Load oneNodeGraph.tsv
+loaded graph one_node_graph
+
+# Find minimum-cost path on onlyNode
+path from onlyNode to onlyNode:
+total cost: 0.000

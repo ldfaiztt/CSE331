@@ -1,0 +1,7 @@
+# Tests find path on one_node_graph
+
+# Load oneNodeGraph.tsv
+LoadGraph one_node_graph oneNodeGraph.tsv
+
+# Find minimum-cost path on onlyNode
+FindPath one_node_graph onlyNode onlyNode

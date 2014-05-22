@@ -1,0 +1,161 @@
+Chun-Wei Chen
+CSE 331
+Homework 3 - Problem 0
+04/12/13
+
+a. 
+r = p - q: 
+  set r = q by making a term-by-term copy of all terms in q to r
+  foreach term, t_r, in r: 
+    replace t_r in r with multiplication of t_r and -1
+  p + r // use the polynomial addition provided in spec
+
+b.
+r = p * q: 
+  set d_p = 0
+  set d_q = 0
+  set r = 0 // zero polynomial
+  foreach term, t_p, in p:
+    set d_p = degree of t_p
+    
+    foreach term, t_q, in q: 
+      set d_q = degree of t_q
+      if any term, t_r, in r has the same degree as d_p + d,
+        then increment the t_r in r by t_p * t_q
+        else insert t_p * t_q as a new term with degree as d_p + d into r
+      set d_q = d_q + 1
+    
+    set d_q = 0
+    set d_p = d_p + 1
+
+c.
+r = p * q: 
+  set d_p = 0
+  set d_q = 0
+  set r = 0 // zero polynomial
+  {d_p = 0 & d_q = 0 & r = "0"}
+  {LI_OUTER: r + p[d_p...] * q = p * q}
+  foreach term, t_p, in p in order of increasing degree:
+    {LI_OUTER & d_p = 0 & d_q = 0 & t_p exists}
+    set d_p = degree of t_p
+    {LI_OUTER & t_p exists & d_p = degree of t_p & d_q = 0}
+    {LI_INNER: r + p[d_p] * q[d_q...] = p[...d_p] * q}
+    foreach term, t_q, in q in order of increasing degree: 
+      {LI_INNER & t_q exists & d_p = degree of t_p & d_q = 0}
+      set d_q = degree of t_q
+      {LI_INNER & d_p = degree of t_p & d_q = degree of t_q}
+      if any term, t_r, in r has the same degree as d_p + d,
+        {LI_INNER & d_p = degree of t_p & d_q = degree of t_q & 
+		 degree of d_p + d exists in r_pre}
+        then increment the t_r in r by t_p * t_q
+        {r + p[d_p] * q[d_q+1...] = p[...d_p] * q & 
+		 d_p = degree of t_p & d_q = degree of t_q}
+        
+        {LI_INNER & d_p = degree of t_p & d_q = degree of t_q & 
+		 degree of d_p + d not exists in r_pre}
+        else insert t_p * t_q as a new term with degree as d_p + d into r
+        {r + p[d_p] * q[d_q+1...] = p[...d_p] * q & 
+		 d_p = degree of t_p & d_q = degree of t_q}
+      {r + p[d_p] * q[d_q+1...] = p[...d_p] * q}
+      set d_q = d_q + 1
+      {r + p[d_p] * q[d_q...] = p[...d_p] * q}
+    {LI_INNER: r + p[d_p] * q[d_q...] = p[...d_p] * q}
+    {r + p[d_p+1...] * q = p * q}
+    set d_q = 0
+    set d_p = d_p + 1
+    {r + p[d_p...] * q = p * q}
+  {LI_OUTER: r + p[d_p...] * q = p * q}
+  {r = p * q}
+  
+LI_INNER: r + p[d_p] * q[d_q...] = p[...d_p] * q
+1. {LI_OUTER & t_p exists & d_p = degree of t_p & d_q = 0}
+   => {r + p[d_p] * q[d_q...] 
+       = p * q - p[d_p...] * q + p[d_p] * q[0...] 
+       = p[...d_p] * q}
+   => {LI_INNER}
+2. Refer to assertions in the code above
+3. {LI_INNER & d_q not exists}
+   => {d_q - 1 = highest degree in q}
+   => {q[d_q...] = "0"}
+   => {r + p[d_p] * q[d_q...] + p[d_p+1...] * q 
+       = r + p[d_p+1...] * q 
+	   = p * q}
+   => {postcondition}
+
+LI_OUTER: r + p[d_p...] * q = p * q
+1. {d_p = 0 & d_q = 0 & r = "0"}
+   => {r + p[d_p...] * q = 0 + p[0...] * q = p * q}
+   => {LI_OUTER}
+2. Refer to assertions in the code above
+3. {LI_OUTER & t_p not exists}
+   => {d_p - 1 = highest degree in p}
+   => {p[d_p...] = "0"}
+   => {r + p[d_p...] * q = r = p * q}
+   => {postcondition}
+
+Note: "0" means zero polynomial
+
+d.
+q = u / v:
+  set q = 0 // zero polynomial
+  set r = u by making a term-by-term copy of all terms in u to r
+  while r != 0 and highest degree of r >= highest degree of v: 
+    set t = leading term of r / leading term of v
+    set d = highest degree of r - highest degree of v
+    set s to be a polynomial that has a term of degree d with coefficient t
+    set q = s + q
+    set r = r - (s * v)
+
+e.
+(x^3-2*x+3) / (3*x^2) = 1/3*x
+u = (x^3-2*x+3)
+v = (3*x^2)
+q = 0 // zero polynomial
+r = copy of u = (x^3-2*x+3)
+while r != 0 and highest degree of r >= highest degree of v
+  [r != 0 and highest degree of r (3) >= highest degree of v (2)] YES
+  Iteration 1: 
+    [set t = leading term of r / leading term of v] t = 1/3
+    [set d = highest degree of r - highest degree of v] d = 2 - 1 = 1
+    [set s to be a polynomial that has a term of degree d with coefficient t] 
+	s = 1/3*x
+    [set q = s + q] q = 0 + 1/3*x = 1/3*x
+    [set r = r - (s * v)] 
+	r = x^3-2*x+3 - ((1/3*x) * (3*x^2)) = x^3-2*x+3 - x^3 = -2*x+3
+  [r != 0 and highest degree of r (1) >= highest degree of v (2)] NO
+DONE! q = 1/3*x
+
+(x^3+x-1) / (x+1) = x^2-x+2
+u = (x^3+x-1)
+v = (x+1)
+q = 0 // zero polynomial
+r = copy of u = (x^3+x-1)
+while r != 0 and highest degree of r >= highest degree of v
+  [r != 0 and highest degree of r (3) >= highest degree of v (1)] YES
+  Iteration 1: 
+    [set t = leading term of r / leading term of v] t = 1
+    [set d = highest degree of r - highest degree of v] d = 3 - 1 = 2
+    [set s to be a polynomial that has a term of degree d with coefficient t] 
+	s = x^2
+    [set q = s + q] q = 0 + x^2 = x^2
+    [set r = r - (s * v)] 
+	r = x^3+x-1 - (x^2 * (x+1)) = x^3+x-1 - (x^3+x^2) = -x^2+x-1
+  [r != 0 and highest degree of r (2) >= highest degree of v (1)] YES
+  Iteration 2: 
+    [set t = leading term of r / leading term of v] t = -1
+    [set d = highest degree of r - highest degree of v] d = 2 - 1 = 1
+    [set s to be a polynomial that has a term of degree d with coefficient t] 
+	s = -x
+    [set q = s + q] q = x^2 + (-x) = x^2-x
+    [set r = r - (s * v)] 
+	r = -x^2+x-1 - (-x * (x+1)) = -x^2+x+1 - (-x^2-x) = 2*x-1
+  [r != 0 and highest degree of r (1) >= highest degree of v (1)] YES
+  Iteration 3: 
+    [set t = leading term of r / leading term of v] t = 2
+    [set d = highest degree of r - highest degree of v] d = 1 - 1 = 0
+    [set s to be a polynomial that has a term of degree d with coefficient t] 
+	s = 2
+    [set q = s + q] q = x^2-x + 2 = x^2-x+2
+    [set r = r - (s * v)] r = 2*x-1 - (2 * x+1) = 2*x-1 - (2*x+2) = -3
+  [r != 0 and highest degree of r (0) >= highest degree of v (1)] NO
+DONE! q = x^2-x+2

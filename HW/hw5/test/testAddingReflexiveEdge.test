@@ -1,0 +1,16 @@
+# Test MarvelPaths doesn't allow adding reflexive edge
+
+# Parse through the data and build the graph
+LoadGraph three_nodes_graph threeNodesWithReflexiveEdge.tsv
+
+# List nodes and edges to see if the graph is built correctly
+ListNodes three_nodes_graph
+ListChildren three_nodes_graph a
+ListChildren three_nodes_graph b
+ListChildren three_nodes_graph c
+
+# Find the shortest path a to c
+FindPath three_nodes_graph a c
+
+# Find the shortest path c to a
+FindPath three_nodes_graph c a

@@ -1,0 +1,10 @@
+# Find a path with Dijkstra's algorithm when there is only one possible path
+
+CreateGraph characters
+AddNode characters GORILLA-MAN
+AddNode characters HAWK
+AddNode characters VENUS-II
+AddEdge characters GORILLA-MAN HAWK 1
+AddEdge characters HAWK VENUS-II 1.5
+
+FindPath characters GORILLA-MAN VENUS-II

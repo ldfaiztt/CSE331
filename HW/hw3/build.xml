@@ -1,0 +1,84 @@
+<!--Minimal ant build file that needs to be created per hw.  You
+ mostly just have to use this as an example, and modify the project
+ name, and the also.compile property to be a comma-separated list of
+ other hws to compile in the shown fashion. -->
+
+<project name = "hw3" basedir = "../">
+  <property name = "hwname" value = "${ant.project.name}"/>
+  <property name = "hw" location = "${hwname}"/>
+  <property name = "checker.force" value = "false"/>
+  <!-- disable nullness checker -->
+  <property name = "checker.disabled" value="true"/>
+  <property name="compiler.args" value="-g -source 5 -target 5 -Awarns -Xmaxwarns 10000"/>
+  <import file="../common.xml"/>
+   <target name = "daikon-RatNumTest" depends = "build">
+    <java classname="daikon.Chicory"
+          fork="yes"
+          spawn="no"
+          dir="${hw}"
+          classpathref="common.classpath">
+      <arg value="--ppt-omit-pattern=junit|^${hwname}.test"/>
+      <arg value="--dtrace-file=daikon-RatNumTest.dtrace.gz"/>
+      <arg value="--daikon"/>
+      <arg value="--daikon_args"/>
+      <arg value="--var-omit-pattern=ZERO|NaN|serialVersionUID --config_option daikon.PptRelation.enable_object_user=false
+            --no_text_output --config_option daikon.Daikon.progress_delay=-1"/>
+      <arg value="org.junit.runner.JUnitCore"/>
+      <arg value="${hwname}.test.RatNumTest"/>
+    </java>
+    <if>
+      <not>
+	<available file="${hw}/daikon-RatNumTest.inv.gz"/>
+      </not>
+      <then>
+        <fail message="Chicory was unable to create file daikon-RatNumTest.inv.gz"/>
+      </then>
+    </if>
+    <java classname="daikon.PrintInvariants"
+          fork="yes"
+          spawn="no"
+          classpathref="common.classpath"
+          dir="${hw}"
+          output="${hw}/daikon-RatNumTest.inv.txt">
+       <arg value="daikon-RatNumTest.inv.gz"/>
+    </java>
+
+    <echo> "Results are in daikon-RatNumTest.inv.txt" </echo>
+  </target>
+
+  <target name = "daikon-RatNumSmallTest" depends = "build">
+    <java classname="daikon.Chicory"
+          fork="yes"
+          spawn="no"
+          dir="${hw}"
+          classpathref="common.classpath">
+      <arg value="--ppt-omit-pattern=junit|^${hwname}.test"/>
+      <arg value="--dtrace-file=daikon-RatNumSmallTest.dtrace.gz"/>
+      <arg value="--daikon"/>
+      <arg value="--daikon_args"/>
+      <arg value="--var-omit-pattern=ZERO|NaN|serialVersionUID --config_option daikon.PptRelation.enable_object_user=false
+            --no_text_output --config_option daikon.Daikon.progress_delay=-1"/>
+      <arg value="org.junit.runner.JUnitCore"/>
+      <arg value="${hwname}.test.RatNumSmallTest"/>
+    </java>
+    <if>
+      <not>
+	<available file="${hw}/daikon-RatNumSmallTest.inv.gz"/>
+      </not>
+      <then>
+        <fail message="Chicory was unable to create file daikon-RatNumSmallTest.inv.gz"/>
+      </then>
+    </if>
+    <java classname="daikon.PrintInvariants"
+          fork="yes"
+          spawn="no"
+          classpathref="common.classpath"
+          dir="${hw}"
+          output="${hw}/daikon-RatNumSmallTest.inv.txt">
+       <arg value="daikon-RatNumSmallTest.inv.gz"/>
+    </java>
+
+    <echo> "Results are in daikon-RatNumSmallTest.inv.txt" </echo>
+  </target>
+
+</project>

@@ -1,0 +1,21 @@
+# Tests adding two nodes, multiple edges to graph.
+
+# Create a graph
+CreateGraph two_nodes_multiple_edges_graph
+
+# Add two nodes
+AddNode two_nodes_multiple_edges_graph a
+AddNode two_nodes_multiple_edges_graph b
+
+# Add five edges
+AddEdge two_nodes_multiple_edges_graph a a AA
+AddEdge two_nodes_multiple_edges_graph a b AB1
+AddEdge two_nodes_multiple_edges_graph a b AB2
+AddEdge two_nodes_multiple_edges_graph b a BA
+AddEdge two_nodes_multiple_edges_graph b b BB
+
+# Print the nodes in the graph, the outgoing edges from a, 
+# and outgoing edges from b
+ListNodes two_nodes_multiple_edges_graph
+ListChildren two_nodes_multiple_edges_graph a
+ListChildren two_nodes_multiple_edges_graph b

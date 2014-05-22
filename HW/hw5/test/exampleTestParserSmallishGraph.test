@@ -1,0 +1,5 @@
+# Test the parser on a graph that contains several nodes
+# with two edges each.
+
+LoadGraph heroes staffSuperheroes.tsv
+ListChildren heroes Ernst-the-Bicycling-Wizard

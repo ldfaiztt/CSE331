@@ -1,0 +1,7 @@
+# Tests build emptyrGraph.
+
+# Load empty.tsv
+LoadGraph empty_graph empty.tsv
+
+# Print the nodes in the graph
+ListNodes empty_graph

@@ -1,0 +1,13 @@
+<!--Minimal ant build file that needs to be created per pset.  You
+ mostly just have to use this as an example, and modify the project
+ name, and the also.compile property to be a comma-separated list of
+ other psets to compile in the shown fashion. -->
+
+<project name = "hw0" basedir = "../">
+  <property name = "hwname" value = "${ant.project.name}"/>
+  <property name = "hw" location = "${hwname}"/>
+  <property name = "checker.force" value = "false"/>
+  <!-- disable nullness checker -->
+  <property name = "checker.disabled" value="true"/>
+  <import file="${basedir}/common.xml"/>
+</project>

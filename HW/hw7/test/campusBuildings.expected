@@ -1,0 +1,62 @@
+Menu:
+	r to find a route
+	b to see a list of all buildings
+	q to quit
+
+Enter an option ('m' to see the menu): # Verify that the program list all buildings' names 
+# (both abbreviated name and full name) correctly.
+Buildings:
+	BAG: Bagley Hall (East Entrance)
+	BAG (NE): Bagley Hall (Northeast Entrance)
+	BGR: By George
+	CHL: Chemistry Library (West Entrance)
+	CHL (NE): Chemistry Library (Northeast Entrance)
+	CHL (SE): Chemistry Library (Southeast Entrance)
+	CMU: Communications Building
+	CSE: Paul G. Allen Center for Computer Science & Engineering
+	DEN: Denny Hall
+	EEB: Electrical Engineering Building (North Entrance)
+	EEB (S): Electrical Engineering Building (South Entrance)
+	FSH: Fishery Sciences Building
+	GWN: Gowen Hall
+	HUB: Student Union Building (Main Entrance)
+	HUB (Food, S): Student Union Building (South Food Entrance)
+	HUB (Food, W): Student Union Building (West Food Entrance)
+	IMA: Intramural Activities Building
+	KNE: Kane Hall (North Entrance)
+	KNE (E): Kane Hall (East Entrance)
+	KNE (S): Kane Hall (South Entrance)
+	KNE (SE): Kane Hall (Southeast Entrance)
+	KNE (SW): Kane Hall (Southwest Entrance)
+	LOW: Loew Hall
+	MCC: McCarty Hall (Main Entrance)
+	MCC (S): McCarty Hall (South Entrance)
+	MCM: McMahon Hall (Northwest Entrance)
+	MCM (SW): McMahon Hall (Southwest Entrance)
+	MGH: Mary Gates Hall (North Entrance)
+	MGH (E): Mary Gates Hall (East Entrance)
+	MGH (S): Mary Gates Hall (South Entrance)
+	MGH (SW): Mary Gates Hall (Southwest Entrance)
+	MLR: Miller Hall
+	MNY: Meany Hall (Northeast Entrance)
+	MNY (NW): Meany Hall (Northwest Entrance)
+	MOR: Moore Hall
+	MUS: Music Building (Northwest Entrance)
+	MUS (E): Music Building (East Entrance)
+	MUS (S): Music Building (South Entrance)
+	MUS (SW): Music Building (Southwest Entrance)
+	OUG: Odegaard Undergraduate Library
+	PAA: Physics/Astronomy Building A
+	PAB: Physics/Astronomy Building
+	PAR: Parrington Hall
+	RAI: Raitt Hall (West Entrance)
+	RAI (E): Raitt Hall (East Entrance)
+	ROB: Roberts Hall
+	SAV: Savery Hall
+	SUZ: Suzzallo Library
+	T65: Thai 65
+	UBS: University Bookstore
+	UBS (Secret): University Bookstore (Secret Entrance)
+
+Enter an option ('m' to see the menu): 
+# terminate the program

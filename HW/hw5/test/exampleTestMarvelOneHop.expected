@@ -1,0 +1,13 @@
+# Find a path with only one "hop" (edge) using the full Marvel dataset.
+# This test exercises both the parser and BFS algorithm on a rather large
+# graph, so it is more of a system test than a true unit test. Such tests
+# should only be run after you have tested the parser and BFS algorithm
+# separately on much smaller graphs.
+
+# To run this test, you will need to have downloaded the marvel dataset and
+# place it in src/hw5/data/marvel.tsv.
+
+loaded graph marvel
+
+path from BEAST/HENRY &HANK& P to WISDOM, PETER:
+BEAST/HENRY &HANK& P to WISDOM, PETER via X:PRIME

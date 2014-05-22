@@ -1,0 +1,18 @@
+# Simple test of breadth-first search algorithm.
+# Verifies that it can find a path with two "hops" (edges) when there are no
+# other edges in the graph.
+# Note that in this graph, there is an edge from GORILLA-MAN to HAWK but not
+# vice versa. In your full parser-generated Marvel graph, relationships are
+# bidirectional, meaning an edge from A to B will always be accompanied by an
+# edge from B to A.
+
+CreateGraph characters
+AddNode characters GORILLA-MAN
+AddNode characters HAWK
+AddNode characters VENUS-II
+AddEdge characters GORILLA-MAN HAWK AVF-4
+AddEdge characters HAWK VENUS-II AVF-5
+
+FindPath characters GORILLA-MAN VENUS-II
+
+FindPath characters HAWK GORILLA-MAN

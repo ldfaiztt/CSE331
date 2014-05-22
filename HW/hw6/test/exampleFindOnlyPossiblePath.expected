@@ -1,0 +1,13 @@
+# Find a path with Dijkstra's algorithm when there is only one possible path
+
+created graph characters
+added node GORILLA-MAN to characters
+added node HAWK to characters
+added node VENUS-II to characters
+added edge 1.000 from GORILLA-MAN to HAWK in characters
+added edge 1.500 from HAWK to VENUS-II in characters
+
+path from GORILLA-MAN to VENUS-II:
+GORILLA-MAN to HAWK with weight 1.000
+HAWK to VENUS-II with weight 1.500
+total cost: 2.500

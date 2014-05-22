@@ -1,0 +1,10 @@
+# Tests build threeNodesTwoEdgesGraph
+
+# Load threeNodesTwoEdgesGraph.tsv
+LoadGraph three_nodes_two_edges_graph threeNodesTwoEdgesGraph.tsv
+
+# Check if build graph is correct
+ListNodes three_nodes_two_edges_graph
+ListChildren three_nodes_two_edges_graph node1
+ListChildren three_nodes_two_edges_graph node2
+ListChildren three_nodes_two_edges_graph node3

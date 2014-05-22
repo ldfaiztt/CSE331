@@ -1,0 +1,15 @@
+# Test BFS on sports graph
+
+# build the graph
+loaded graph sports
+
+# test BFS order
+# find the shortest path Howard to Michael
+path from Howard to Michael:
+Howard to Jeff via NFL
+Jeff to Michael via MLB
+
+# find the shortest path Michael to Howard
+path from Michael to Howard:
+Michael to Jeff via MLB
+Jeff to Howard via NFL

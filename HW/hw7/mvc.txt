@@ -1,0 +1,13 @@
+Chun-Wei Chen
+CSE 331
+Homework 7
+05/28/13
+
+model: CampusDataParser, CampusRouteFindingModel, Coordinates
+view: every static methods but main in CampusRouteFindingTool, 
+	  and System.out.print("Abbreviated name of starting building: ") 
+	  and System.out.print("Abbreviated name of ending building: ") in 
+	  main of CampusRouteFindingTool
+controller: main in CampusRouteFindingTool except 
+			System.out.print("Abbreviated name of starting building: ")
+			and System.out.print("Abbreviated name of ending building: ");

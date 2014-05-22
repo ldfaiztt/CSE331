@@ -1,0 +1,200 @@
+Chun-Wei Chen
+CSE 331
+Homework 2
+04/12/13
+
+Problem 1
+{pre: size > 0} 
+k = 0; 
+max = items[0];
+{loop-inv: max = largest in items[0...k]}
+while (k+1 != size) {
+  {loop-inv: max = largest in items[0...k]}
+  if (max < items[k+1]) {
+    {max = largest in items[0¡Kk] ^ max < items[k+1]}
+    max = items[k+1];
+    {max = largest in items[0...k+1]}
+  else {
+    // nothing to do 
+    {max = largest in items[0...k+1]}
+  }
+  {max = largest in items[0...k+1]}
+  k = k+1;
+  {loop-inv: max = largest in items[0...k]}
+}
+{loop-inv: max = largest in items[0...k]}
+{max = largest in items[0...k] ^ k+1 = size}
+-> {max = largest in items[0...k] ^ k = size-1}
+-> {max = largest in items[0...size-1]}
+
+Change k to be the last index of element in the array 
+that has been checked, and use k+1 to refer to the index 
+of next element to be check. I think this change made 
+the code harder to write compared to original version 
+since k stores the index of next element to be examine 
+is more intuitive and doesn't need use k+1 instead of 
+k that many times inside the loop.
+
+Problem 2
+@requires x >= 0 && y >= 0
+int expt(int x, int y) {
+  {x = x_pre & y = y_pre & x_pre >= 0 & y_pre >= 0}
+  int z = 1;
+  {x = x_pre & y = y_pre & x_pre >= 0 & y_pre >= 0 & z = 1}
+  {LI: z*x^y = x_pre^y_pre}
+  while (y != 0) {
+    {z*x^y = x_pre^y_pre & y > 0}
+    if (y % 2 == 0) {
+      {z*x^y = x_pre^y_pre & y > 0 & y%2 = 0}
+      y = y/2;
+      x = x*x;
+      {z*x^y = x_pre^y_pre & y > 0}
+    } else {
+      {z*x^y = x_pre^y_pre & y > 0 & y%2 = 1}
+      z = z*x;
+      y = y-1;
+      {z*x^y = x_pre^y_pre & y >= 0 & y%2 = 0}
+    }
+    {z*x^y = x_pre^y_pre & y >= 0}
+  }
+  {LI: z*x^y = x_pre^y_pre}
+  {z = x_pre^y_pre & y = 0}
+  return z;
+}
+
+LI: z*x^y = x_pre^y_pre
+1. prove true initially
+   z = 1 & x = x_pre & y = y_pre
+   => z*x^y = x^y = x_pre^y_pre
+   => LI
+2. prove true if the loop executes once
+   {LI & y != 0}
+   z = z_pre = 1
+   if y%2 = 0 => y = y_pre/2 & x = x_pre*x_pre
+              => z*x^y = (x_pre*x_pre)^(y_pre/2) = x_pre^y_pre
+              => LI
+   else (y%2 = 1) => y = y_pre-1 & z=z_pre*x_pre
+                  => z*x^y = (z_pre*x_pre)*x_pre^(y_pre-1) 
+				           = x_pre*x_pre^(y_pre-1) = x_pre^y_pre
+                  => {LI}
+   so {LI & y != 0} LoopBody {LI}
+3. prove if it establishes the postcondition when the loop is terminated
+   {LI & !(y != 0)} => {z*x^y = x_pre^y_pre & y = 0}
+                    => {z = x_pre^y_pre & y = 0}
+
+Problem 3
+int i = 0;
+int j = n-1;
+{i = 0 & j = n-1}
+{LI: all elements in a[0...i-1] <= a[0] & 
+     all elements in a[j+1...] > a[0]}
+while (i < j) {
+  {all elements in a[0...i-1] <= a[0] & 
+   all elements in a[j+1...] > a[0] & (i < j)}
+  if (a[j] > a[0])
+    {(a[j] > a[0]) & all  elements in a[0...i-1] <= a[0] & 
+	 all elements in a[j...] > a[0]}
+    j--;
+    {LI: all elements in a[0...i-1] <= a[0] & 
+	     all elements in a[j+1...] > a[0]}
+  else if (a[i] <= a[0])
+    {(a[i] <= a[0]) & all  elements in a[0...i] <= a[0] & 
+	 all elements in a[j+1...] > a[0]}
+    i++;
+    {LI: all elements in a[0...i-1] <= a[0] & 
+	     all elements in a[j+1...] > a[0]}
+  else {
+    {(a[j] <= a[0]) & (a[i] > a[0]) & 
+	all elements in a[0...i-1] <= a[0] & all elements in a[j+1...] > a[0]}
+    swap(a[i], a[j]);
+    {all elements in a[0...i] <= a[0] & all elements in a[j...] > a[0]}
+    i++;
+    j--;
+    {LI: all elements in a[0...i-1] <= a[0] & 
+	     all elements in a[j+1...] > a[0]}
+  }
+}
+{LI: all elements in a[0...i-1] <= a[0] & all elements in a[j+1...] > a[0]}
+{all elements in a[0...i-1] <= a[0] & 
+ all elements in a[j+1...] > a[0] & (i >= j)}
+swap(a[0], a[j]);
+{post:
+ 0                                  n
+ +-------------+----+---------------+
+a|  <= a[0]    |a[0]|     > a[0]    |
+ +-------------+----+---------------+
+}
+
+LI: all elements in a[0...i-1] <= a[0] & all elements in a[j+1...] > a[0]
+1. {i = 0 & j = n-1} => {i-1 = -1 & j+1 = n}
+                     => {all  elements in a[0...i-1] <= a[0] & 
+					     all elements in a[j+1...] > a[0]}
+				     => {LI}
+2. prove true if the loop executes once: 
+   Refer to the code. I already put appropriate assertions 
+   inside the loop to prove this true.
+3. {all  elements in a[0...i-1] <= a[0] & 
+    all elements in a[j+1...] > a[0] & !(i < j)}
+   => {LI & (i >= j)}
+   => {postcondition} 
+
+Problem 4
+int i, j, min;
+i = 0;
+{i = 0}
+{LI_OUTER: a[0...i-1] is in sorted order}
+while (i < n-1) {
+  {a[0...i-1] is in sorted order & (i < n-1)}
+  min = i;
+  j = i+1;
+  {a[0...i-1] is in sorted order & (i < n-1) & (min = i) & (j = i+1)}
+  {LI_INNER: min contains the index of the smallest element in a[i...j-1]}
+  while (j < n) {
+    {min contains the index of the smallest element in a[i...j-1] & (j < n)}
+    if (a[j] < a[min]) {
+      {min contains the index of the smallest element in a[i...j-1] & 
+	   (j < n) & (a[j] < a[min])}
+      min = j;
+      {min contains the index of the smallest element in a[i...j] & (j < n)}
+    } else {
+	  {min contains the index of the smallest element in a[i...j-1] & 
+	   (j < n) & (a[j] >= a[min])}
+	  => {min contains the index of the smallest element in a[i...j] & (j < n)}
+    }
+    {min contains the index of the smallest element in a[i...j] & (j < n)}
+    j++;
+    {min contains the index of the smallest element in a[i...j-1] & (j < n)}
+	=> {LI_INNER: min contains the index of the smallest element in a[i...j-1]}
+  }
+  {LI_INNER: min contains the index of the smallest element in a[i...j-1]}
+  {min contains the index of the smallest element in a[i...j-1] & j = n}
+  swap(a[i], a[min]);
+  {a[0...i] is in sorted order & (i < n-1) & (n = j)}
+  i++;
+  {a[0...i-1] is in sorted order & (i <= n-1) & (n = j)} 
+  => {LI_OUTER: a[0...i-1] is in sorted order}
+}
+{LI_OUTER: a[0...i-1] is in sorted order}
+{array a is in sorted order}
+
+LI_INNER: min contains the index of the smallest element in a[i...j-1]
+1. {a[0...i-1] is in sorted order & (i < n-1) & (min = i) & (j = i+1)}
+   => {min = i & min = j-1}
+   => {min contains the index of the smallest element in a[i...j-1]}
+   => {LI_INNER}
+2. prove true if the loop executes once: 
+   Refer to the code. 
+   I already put appropriate assertions inside the loop to prove this true.
+3. {min contains the index of the smallest element in a[i...j-1] & !(j < n)}
+   => {min contains the index of the smallest element in a[i...j-1] & j = n}
+   => {postcondition}
+
+{LI_OUTER: a[0...i-1] is in sorted order}
+1. {i = 0} => {i-1 = -1} => {a[0...i-1] is in sorted order} => {LI_OUTER}
+2. prove true if the loop executes once: 
+   Refer to the code. 
+   I already put appropriate assertions inside the loop to prove this true.
+3. {a[0...i-1] is in sorted order & !(i < n-1)}
+   => {a[0...i-1] is in sorted order & (i = n)}
+   => {array a is in sorted order}
+   => {postcondition}   

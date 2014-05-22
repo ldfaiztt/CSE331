@@ -1,0 +1,21 @@
+# Test BFS on zoo graph
+
+# Parse through the data and build the graph
+loaded graph zoos
+
+# Find the shortest path Elephant to Tiger
+path from Elephant to Tiger:
+Elephant to Koala via Zoo3
+Koala to Tiger via Zoo1
+
+# Find the shortest path Tiger to Elephant
+path from Tiger to Elephant:
+Tiger to Koala via Zoo1
+Koala to Elephant via Zoo3
+
+# Find the shortest path Penguin to Monkey
+path from Penguin to Monkey:
+Penguin to Monkey via Zoo2
+
+# Find the shortest path Monkey to Monkey
+path from Monkey to Monkey:

@@ -1,0 +1,12 @@
+Chun-Wei Chen
+CSE 331
+Homework 4 - Problem 2
+05/07/13
+
+addNode and addEdge are needed in order to build the graph. containsNode 
+are needed so that the graph won't have duplicate nodes. getNodes, 
+childrenOf, isEmpty and size are included since it allows client to get 
+some information about the graph. entrySet and toString are included since 
+I feel that it'll be useful for the client to view the whole graph. 
+Finally, removeEdge are included since I think some client might want to 
+remove some edges after they are added.

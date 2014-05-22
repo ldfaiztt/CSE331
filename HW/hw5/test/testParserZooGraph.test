@@ -1,0 +1,14 @@
+# Test the parser on zoos' data to see 
+# if the graph is built correctly
+
+# Parse through the data and build the graph
+LoadGraph zoos zoos.tsv
+
+# List nodes and edges to see if the graph 
+# is built correctly
+ListNodes zoos
+ListChildren zoos Monkey
+ListChildren zoos Penguin
+ListChildren zoos Koala
+ListChildren zoos Elephant
+ListChildren zoos Tiger

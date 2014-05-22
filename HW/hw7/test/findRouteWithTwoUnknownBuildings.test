@@ -1,0 +1,10 @@
+# Verify that the program prints 
+# "Unknown building: " + buildingName 
+# twice when both starting building and 
+# ending building are unknown.
+r
+NBA
+NFL
+
+# terminate the program
+q

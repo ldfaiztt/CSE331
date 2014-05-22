@@ -1,0 +1,6 @@
+Chun-Wei Chen
+CSE 331
+Homework 8
+06/06/13
+
+Resize the map view when resizing the frame.

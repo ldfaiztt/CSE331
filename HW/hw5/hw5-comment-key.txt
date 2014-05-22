@@ -1,0 +1,30 @@
+----- Test Quality ------
+
+Test Coverage: Does not cover an adequate domain of inputs, including common cases for the parser and path-finding algorithm as well as edge cases (nodes missing, no path, etc.).
+
+Test Documentation: Non-descriptive test names or comments.  The testing strategy or the goal of a particular test was not clear from reading the .test file.
+
+Test Granularity: Tests do not represent coverage of a single domain. Each test (a method in your implementation tests or a script file in your specification tests) should be short and test one specific domain.
+
+Test Naming: Name of test does not indicate the condition being tested. A name that describes the test file being used e.g. testStaffSuperhoes or testMarvel does not provide useful information about what has failed. Better is a name that describes the condition being tested, e.g. testPathNotFound or testOneEdgePath.
+
+----- Code Quality -----
+
+Internal Comments: If a chunk of code is complex or subtle, be sure to include comments explaining what cannot be understood from a quick glance. (On the other hand, no need to repeat what a reader familiar with Java can easily understand  e.g., that a for-each loop over foo is iterating over each element of foo.)
+
+Interface: Declare variables with the interface type e.g., Map instead of HashMap.
+
+AF/RI or ADT: Abstraction function and/or representation invariant missing or inadequate for ADT-style implementations of MarvelPaths. Please come talk to us at office hours if youre unsure how to write the AF.
+
+BFS in graph: This particular implementation of BFS is very application-specific, in that it does extra work to enforce a specific lexicographic ordering. Most applications using BFS will not care about such an ordering. Consequently, as indicated in the writeup, the graph is not really an appropriate place for your BFS algorithm. (Moreover, BFS is just one of many traversal algorithms frequently used in graph applications. Attempting to implement all common algorithms in the graph would not be practical: the public API would be huge and the class would be difficult to maintain.)
+
+----- Javadoc -----
+
+There was some confusion about how to use Javadoc tags:
+
+Effects: should not describe the return value @returns is sufficient for this. Describes objects that are modified as a result of the method, not objects that are created.
+
+Modifies: should not list instance fields, as the client doesnt (and shouldnt) know about these. If the calling object is modified, you may simply list this in the @modifies tag, but it is more useful to the client to list specification fields of the ADT (which you will have defined in the class comments).
+
+Param: should be written in the format @param variableName description, e.g:
+@param filename data file from which to construct the graph

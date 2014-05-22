@@ -1,0 +1,9 @@
+# Tests find minimum-cost path if two paths exist.
+
+CreateGraph two_nodes_two_edges_graph
+AddNode two_nodes_two_edges_graph node1
+AddNode two_nodes_two_edges_graph node2
+AddEdge two_nodes_two_edges_graph node1 node2 1
+AddEdge two_nodes_two_edges_graph node1 node2 1.001
+
+FindPath two_nodes_two_edges_graph node1 node2

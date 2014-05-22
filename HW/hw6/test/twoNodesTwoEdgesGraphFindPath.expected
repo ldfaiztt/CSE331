@@ -1,0 +1,11 @@
+# Tests find minimum-cost path if two paths exist.
+
+created graph two_nodes_two_edges_graph
+added node node1 to two_nodes_two_edges_graph
+added node node2 to two_nodes_two_edges_graph
+added edge 1.000 from node1 to node2 in two_nodes_two_edges_graph
+added edge 1.001 from node1 to node2 in two_nodes_two_edges_graph
+
+path from node1 to node2:
+node1 to node2 with weight 1.000
+total cost: 1.000

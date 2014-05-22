@@ -1,0 +1,8 @@
+# Test the parser and BFS on empty file
+
+loaded graph empty
+
+empty contains:
+
+unknown character node a
+unknown character node b

@@ -1,0 +1,484 @@
+===========================================================================
+com.sun.proxy.$Proxy4:::CLASS
+com.sun.proxy.$Proxy4.m1 has only one value
+com.sun.proxy.$Proxy4.m1 != null
+com.sun.proxy.$Proxy4.m3 has only one value
+com.sun.proxy.$Proxy4.m3 != null
+com.sun.proxy.$Proxy4.m0 has only one value
+com.sun.proxy.$Proxy4.m0 != null
+com.sun.proxy.$Proxy4.m4 has only one value
+com.sun.proxy.$Proxy4.m4 != null
+com.sun.proxy.$Proxy4.m5 has only one value
+com.sun.proxy.$Proxy4.m5 != null
+com.sun.proxy.$Proxy4.m2 has only one value
+com.sun.proxy.$Proxy4.m2 != null
+===========================================================================
+com.sun.proxy.$Proxy4:::OBJECT
+===========================================================================
+com.sun.proxy.$Proxy4.$Proxy4(java.lang.reflect.InvocationHandler):::ENTER
+arg0 != null
+arg0.getClass() == sun.reflect.annotation.AnnotationInvocationHandler.class
+===========================================================================
+com.sun.proxy.$Proxy4.$Proxy4(java.lang.reflect.InvocationHandler):::EXIT
+===========================================================================
+com.sun.proxy.$Proxy4.annotationType():::ENTER
+===========================================================================
+com.sun.proxy.$Proxy4.annotationType():::EXIT
+com.sun.proxy.$Proxy4.m1 == orig(com.sun.proxy.$Proxy4.m1)
+com.sun.proxy.$Proxy4.m3 == orig(com.sun.proxy.$Proxy4.m3)
+com.sun.proxy.$Proxy4.m0 == orig(com.sun.proxy.$Proxy4.m0)
+com.sun.proxy.$Proxy4.m4 == orig(com.sun.proxy.$Proxy4.m4)
+com.sun.proxy.$Proxy4.m5 == orig(com.sun.proxy.$Proxy4.m5)
+com.sun.proxy.$Proxy4.m2 == orig(com.sun.proxy.$Proxy4.m2)
+return has only one value
+return != null
+===========================================================================
+com.sun.proxy.$Proxy4.expected():::ENTER
+===========================================================================
+com.sun.proxy.$Proxy4.expected():::EXIT
+com.sun.proxy.$Proxy4.m1 == orig(com.sun.proxy.$Proxy4.m1)
+com.sun.proxy.$Proxy4.m3 == orig(com.sun.proxy.$Proxy4.m3)
+com.sun.proxy.$Proxy4.m0 == orig(com.sun.proxy.$Proxy4.m0)
+com.sun.proxy.$Proxy4.m4 == orig(com.sun.proxy.$Proxy4.m4)
+com.sun.proxy.$Proxy4.m5 == orig(com.sun.proxy.$Proxy4.m5)
+com.sun.proxy.$Proxy4.m2 == orig(com.sun.proxy.$Proxy4.m2)
+return has only one value
+return != null
+===========================================================================
+com.sun.proxy.$Proxy4.timeout():::ENTER
+===========================================================================
+com.sun.proxy.$Proxy4.timeout():::EXIT
+com.sun.proxy.$Proxy4.m1 == orig(com.sun.proxy.$Proxy4.m1)
+com.sun.proxy.$Proxy4.m3 == orig(com.sun.proxy.$Proxy4.m3)
+com.sun.proxy.$Proxy4.m0 == orig(com.sun.proxy.$Proxy4.m0)
+com.sun.proxy.$Proxy4.m4 == orig(com.sun.proxy.$Proxy4.m4)
+com.sun.proxy.$Proxy4.m5 == orig(com.sun.proxy.$Proxy4.m5)
+com.sun.proxy.$Proxy4.m2 == orig(com.sun.proxy.$Proxy4.m2)
+return == 0
+===========================================================================
+hw3.RatNum:::OBJECT
+this.denom >= 0
+===========================================================================
+hw3.RatNum.RatNum(int):::ENTER
+===========================================================================
+hw3.RatNum.RatNum(int):::EXIT
+this.numer == orig(n)
+this.denom == 1
+===========================================================================
+hw3.RatNum.RatNum(int, int):::ENTER
+===========================================================================
+hw3.RatNum.RatNum(int, int):::EXIT
+===========================================================================
+hw3.RatNum.add(hw3.RatNum):::ENTER
+this.numer >= -1
+arg != null
+arg.denom >= 0
+===========================================================================
+hw3.RatNum.add(hw3.RatNum):::EXIT
+this.numer == orig(this.numer)
+this.denom == orig(this.denom)
+arg.numer == orig(arg.numer)
+arg.denom == orig(arg.denom)
+this.numer >= -1
+arg.denom >= 0
+return != null
+return.denom >= 0
+===========================================================================
+hw3.RatNum.checkRep():::ENTER
+===========================================================================
+hw3.RatNum.checkRep():::EXIT
+this.numer == orig(this.numer)
+this.denom == orig(this.denom)
+===========================================================================
+hw3.RatNum.compareTo(hw3.RatNum):::ENTER
+this.numer >= -1
+rn != null
+rn.numer >= -1
+rn.denom >= 0
+===========================================================================
+hw3.RatNum.compareTo(hw3.RatNum):::EXIT135
+this.numer one of { -1, 1, 100 }
+this.denom == 0
+rn.denom one of { 1, 2 }
+return == 1
+this.numer != this.denom
+this.denom < rn.denom
+rn.denom >= return
+===========================================================================
+hw3.RatNum.compareTo(hw3.RatNum):::EXIT137
+this.denom one of { 1, 2 }
+rn.numer one of { -1, 1, 100 }
+rn.denom == 0
+return == -1
+this.numer >= return
+this.denom > rn.denom
+this.denom > return
+rn.numer != rn.denom
+rn.numer >= return
+===========================================================================
+hw3.RatNum.compareTo(hw3.RatNum):::EXIT140
+this.denom one of { 1, 2, 3 }
+rn.numer <= 2
+rn.denom one of { 1, 2, 3 }
+===========================================================================
+hw3.RatNum.compareTo(hw3.RatNum):::EXIT
+this.numer == orig(this.numer)
+this.denom == orig(this.denom)
+rn.numer == orig(rn.numer)
+rn.denom == orig(rn.denom)
+this.numer >= -1
+rn.numer >= -1
+rn.denom >= 0
+===========================================================================
+hw3.RatNum.div(hw3.RatNum):::ENTER
+this.numer >= -1
+arg != null
+arg.numer >= -1
+arg.denom >= 0
+===========================================================================
+hw3.RatNum.div(hw3.RatNum):::EXIT253
+arg.numer == return.numer
+arg.denom == return.denom
+return == orig(arg)
+this.denom one of { 0, 1, 2 }
+arg.denom == 0
+this.denom >= arg.denom
+===========================================================================
+hw3.RatNum.div(hw3.RatNum):::EXIT255
+arg.denom >= 1
+===========================================================================
+hw3.RatNum.div(hw3.RatNum):::EXIT
+this.numer == orig(this.numer)
+this.denom == orig(this.denom)
+arg.numer == orig(arg.numer)
+arg.denom == orig(arg.denom)
+(arg.denom == 0)  ==>  (arg.denom == return.denom)
+(arg.denom == 0)  ==>  (arg.numer == return.numer)
+(arg.denom == 0)  ==>  (return == orig(arg))
+(arg.denom == 0)  ==>  (return.denom == 0)
+(arg.denom == 0)  ==>  (return.numer >= -1)
+(arg.denom == 0)  ==>  (this.denom >= arg.denom)
+(arg.denom == 0)  ==>  (this.denom >= return.denom)
+(arg.denom == 0)  ==>  (this.denom one of { 0, 1, 2 })
+this.numer >= -1
+arg.numer >= -1
+arg.denom >= 0
+return != null
+return.denom >= 0
+===========================================================================
+hw3.RatNum.doubleValue():::ENTER
+===========================================================================
+hw3.RatNum.doubleValue():::EXIT155
+this.numer == 1
+this.denom == 0
+return == Double.NaN
+===========================================================================
+hw3.RatNum.doubleValue():::EXIT158
+this.denom >= 1
+===========================================================================
+hw3.RatNum.doubleValue():::EXIT
+this.numer == orig(this.numer)
+this.denom == orig(this.denom)
+(this.denom == 0)  ==>  (return == Double.NaN)
+(this.denom == 0)  ==>  (this.numer == 1)
+===========================================================================
+hw3.RatNum.equals(java.lang.Object):::ENTER
+this.numer >= -1
+this.denom one of { 0, 1, 2 }
+obj != null
+obj.getClass() == hw3.RatNum.class
+===========================================================================
+hw3.RatNum.equals(java.lang.Object):::EXIT304
+this.numer one of { -1, 1, 100 }
+this.denom == 0
+return == true
+this.numer != this.denom
+===========================================================================
+hw3.RatNum.equals(java.lang.Object):::EXIT304;condition="return == true"
+===========================================================================
+hw3.RatNum.equals(java.lang.Object):::EXIT306
+this.denom one of { 1, 2 }
+===========================================================================
+hw3.RatNum.equals(java.lang.Object):::EXIT306;condition="return == true"
+===========================================================================
+hw3.RatNum.equals(java.lang.Object):::EXIT306;condition="not(return == true)"
+===========================================================================
+hw3.RatNum.equals(java.lang.Object):::EXIT
+this.numer == orig(this.numer)
+this.denom == orig(this.denom)
+(return == false)  ==>  (this.denom one of { 1, 2 })
+(return == true)  ==>  (this.denom one of { 0, 1, 2 })
+this.numer >= -1
+this.denom one of { 0, 1, 2 }
+===========================================================================
+hw3.RatNum.equals(java.lang.Object):::EXIT;condition="return == true"
+return == true
+===========================================================================
+hw3.RatNum.equals(java.lang.Object):::EXIT;condition="not(return == true)"
+this.denom one of { 1, 2 }
+return == false
+===========================================================================
+hw3.RatNum.floatValue():::ENTER
+===========================================================================
+hw3.RatNum.floatValue():::EXIT
+this.numer == orig(this.numer)
+this.denom == orig(this.denom)
+===========================================================================
+hw3.RatNum.gcd(int, int):::ENTER
+b != 0
+===========================================================================
+hw3.RatNum.gcd(int, int):::EXIT275
+===========================================================================
+hw3.RatNum.gcd(int, int):::EXIT
+return != 0
+orig(a) % return == 0
+orig(b) % return == 0
+===========================================================================
+hw3.RatNum.intValue():::ENTER
+this.denom >= 1
+===========================================================================
+hw3.RatNum.intValue():::EXIT174
+this.numer >= return
+===========================================================================
+hw3.RatNum.intValue():::EXIT176
+return one of { -2147483648, -1073741824, -1 }
+this.numer % return == 0
+===========================================================================
+hw3.RatNum.intValue():::EXIT
+this.numer == orig(this.numer)
+this.denom == orig(this.denom)
+this.denom >= 1
+===========================================================================
+hw3.RatNum.isNaN():::ENTER
+===========================================================================
+hw3.RatNum.isNaN():::EXIT
+this.numer == orig(this.numer)
+this.denom == orig(this.denom)
+(this.denom == 0)  <==>  (return == true)
+===========================================================================
+hw3.RatNum.isNaN():::EXIT;condition="return == true"
+this.denom == 0
+return == true
+===========================================================================
+hw3.RatNum.isNaN():::EXIT;condition="not(return == true)"
+this.denom >= 1
+return == false
+===========================================================================
+hw3.RatNum.isNegative():::ENTER
+this.numer >= -1
+===========================================================================
+hw3.RatNum.isNegative():::EXIT
+this.numer == orig(this.numer)
+this.denom == orig(this.denom)
+(return == true)  ==>  (this.denom one of { 1, 2 })
+(return == true)  ==>  (this.numer == -1)
+this.numer >= -1
+===========================================================================
+hw3.RatNum.isNegative():::EXIT;condition="return == true"
+this.numer == -1
+this.denom one of { 1, 2 }
+return == true
+===========================================================================
+hw3.RatNum.isNegative():::EXIT;condition="not(return == true)"
+return == false
+===========================================================================
+hw3.RatNum.isPositive():::ENTER
+this.numer >= -1
+===========================================================================
+hw3.RatNum.isPositive():::EXIT
+this.numer == orig(this.numer)
+this.denom == orig(this.denom)
+(return == false)  ==>  (this.denom one of { 1, 2 })
+(return == false)  ==>  (this.numer one of { -1, 0 })
+this.numer >= -1
+===========================================================================
+hw3.RatNum.isPositive():::EXIT;condition="return == true"
+return == true
+===========================================================================
+hw3.RatNum.isPositive():::EXIT;condition="not(return == true)"
+this.numer one of { -1, 0 }
+this.denom one of { 1, 2 }
+return == false
+===========================================================================
+hw3.RatNum.mul(hw3.RatNum):::ENTER
+this.numer >= -1
+arg != null
+arg.numer >= -1
+arg.denom >= 0
+===========================================================================
+hw3.RatNum.mul(hw3.RatNum):::EXIT
+this.numer == orig(this.numer)
+this.denom == orig(this.denom)
+arg.numer == orig(arg.numer)
+arg.denom == orig(arg.denom)
+this.numer >= -1
+arg.numer >= -1
+arg.denom >= 0
+return != null
+return.denom >= 0
+===========================================================================
+hw3.RatNum.negate():::ENTER
+this.numer >= -1
+===========================================================================
+hw3.RatNum.negate():::EXIT
+this.numer == orig(this.numer)
+this.denom == return.denom
+this.denom == orig(this.denom)
+this.numer >= -1
+return != null
+return.numer <= 1
+this.numer + return.numer == 0
+===========================================================================
+hw3.RatNum.sub(hw3.RatNum):::ENTER
+this.numer >= -1
+arg != null
+arg.numer >= -1
+arg.denom >= 0
+===========================================================================
+hw3.RatNum.sub(hw3.RatNum):::EXIT
+this.numer == orig(this.numer)
+this.denom == orig(this.denom)
+arg.numer == orig(arg.numer)
+arg.denom == orig(arg.denom)
+this.numer >= -1
+arg.numer >= -1
+arg.denom >= 0
+return != null
+return.denom >= 0
+===========================================================================
+hw3.RatNum.toString():::ENTER
+===========================================================================
+hw3.RatNum.toString():::EXIT322
+this.denom == 0
+return has only one value
+return.toString == "NaN"
+===========================================================================
+hw3.RatNum.toString():::EXIT324
+this.denom >= 2
+this.numer != this.denom
+===========================================================================
+hw3.RatNum.toString():::EXIT326
+this.denom == 1
+===========================================================================
+hw3.RatNum.toString():::EXIT
+this.numer == orig(this.numer)
+this.denom == orig(this.denom)
+return != null
+===========================================================================
+hw3.RatNum.valueOf(java.lang.String):::ENTER
+ratStr != null
+===========================================================================
+hw3.RatNum.valueOf(java.lang.String):::EXIT347
+ratStr.toString == "NaN"
+return.numer == 1
+return.denom == 0
+orig(ratStr) has only one value
+===========================================================================
+hw3.RatNum.valueOf(java.lang.String):::EXIT350
+return.denom == 1
+===========================================================================
+hw3.RatNum.valueOf(java.lang.String):::EXIT356
+return.denom one of { 1, 2 }
+===========================================================================
+hw3.RatNum.valueOf(java.lang.String):::EXIT
+return != null
+return.denom one of { 0, 1, 2 }
+ratStr.toString == orig(ratStr.toString)
+===========================================================================
+org.hamcrest.BaseMatcher:::OBJECT
+===========================================================================
+org.hamcrest.BaseMatcher.BaseMatcher():::EXIT
+===========================================================================
+org.hamcrest.CoreMatchers.not(java.lang.Object):::ENTER
+value.getClass() == hw3.RatNum.class
+===========================================================================
+org.hamcrest.CoreMatchers.not(java.lang.Object):::EXIT
+return.getClass() == org.hamcrest.core.IsNot.class
+return.getClass() != orig(value.getClass())
+===========================================================================
+org.hamcrest.core.IsEqual:::OBJECT
+this.object != null
+this.object.getClass() == hw3.RatNum.class
+===========================================================================
+org.hamcrest.core.IsEqual.IsEqual(java.lang.Object):::ENTER
+equalArg.getClass() == hw3.RatNum.class
+===========================================================================
+org.hamcrest.core.IsEqual.IsEqual(java.lang.Object):::EXIT
+this.object == orig(equalArg)
+this.object.getClass() == orig(equalArg.getClass())
+===========================================================================
+org.hamcrest.core.IsEqual.areEqual(java.lang.Object, java.lang.Object):::ENTER
+o1.getClass() == hw3.RatNum.class
+o1.getClass() == o2.getClass()
+===========================================================================
+org.hamcrest.core.IsEqual.areEqual(java.lang.Object, java.lang.Object):::EXIT38
+===========================================================================
+org.hamcrest.core.IsEqual.areEqual(java.lang.Object, java.lang.Object):::EXIT38;condition="not(return == true)"
+===========================================================================
+org.hamcrest.core.IsEqual.areEqual(java.lang.Object, java.lang.Object):::EXIT
+return == false
+===========================================================================
+org.hamcrest.core.IsEqual.areEqual(java.lang.Object, java.lang.Object):::EXIT;condition="not(return == true)"
+===========================================================================
+org.hamcrest.core.IsEqual.equalTo(java.lang.Object):::ENTER
+operand.getClass() == hw3.RatNum.class
+===========================================================================
+org.hamcrest.core.IsEqual.equalTo(java.lang.Object):::EXIT
+return.getClass() == org.hamcrest.core.IsEqual.class
+return.getClass() != orig(operand.getClass())
+===========================================================================
+org.hamcrest.core.IsEqual.isArray(java.lang.Object):::ENTER
+o.getClass() == hw3.RatNum.class
+===========================================================================
+org.hamcrest.core.IsEqual.isArray(java.lang.Object):::EXIT
+return == false
+===========================================================================
+org.hamcrest.core.IsEqual.isArray(java.lang.Object):::EXIT;condition="not(return == true)"
+===========================================================================
+org.hamcrest.core.IsEqual.matches(java.lang.Object):::ENTER
+this.object.getClass() == arg.getClass()
+===========================================================================
+org.hamcrest.core.IsEqual.matches(java.lang.Object):::EXIT
+this.object == orig(this.object)
+return == false
+this.object.getClass() == orig(this.object.getClass())
+this.object.getClass() == orig(arg.getClass())
+===========================================================================
+org.hamcrest.core.IsEqual.matches(java.lang.Object):::EXIT;condition="not(return == true)"
+===========================================================================
+org.hamcrest.core.IsNot:::OBJECT
+this.matcher != null
+this.matcher.getClass() == org.hamcrest.core.IsEqual.class
+===========================================================================
+org.hamcrest.core.IsNot.IsNot(org.hamcrest.Matcher):::ENTER
+matcher.getClass() == org.hamcrest.core.IsEqual.class
+===========================================================================
+org.hamcrest.core.IsNot.IsNot(org.hamcrest.Matcher):::EXIT
+this.matcher == orig(matcher)
+this.matcher.getClass() == orig(matcher.getClass())
+===========================================================================
+org.hamcrest.core.IsNot.matches(java.lang.Object):::ENTER
+arg.getClass() == hw3.RatNum.class
+this.matcher.getClass() != arg.getClass()
+===========================================================================
+org.hamcrest.core.IsNot.matches(java.lang.Object):::EXIT
+this.matcher == orig(this.matcher)
+return == true
+this.matcher.getClass() == orig(this.matcher.getClass())
+this.matcher.getClass() != orig(arg.getClass())
+===========================================================================
+org.hamcrest.core.IsNot.matches(java.lang.Object):::EXIT;condition="return == true"
+===========================================================================
+org.hamcrest.core.IsNot.not(java.lang.Object):::ENTER
+value.getClass() == hw3.RatNum.class
+===========================================================================
+org.hamcrest.core.IsNot.not(java.lang.Object):::EXIT
+return.getClass() == org.hamcrest.core.IsNot.class
+return.getClass() != orig(value.getClass())
+===========================================================================
+org.hamcrest.core.IsNot.not(org.hamcrest.Matcher):::ENTER
+matcher.getClass() == org.hamcrest.core.IsEqual.class
+===========================================================================
+org.hamcrest.core.IsNot.not(org.hamcrest.Matcher):::EXIT
+return.getClass() == org.hamcrest.core.IsNot.class
+return.getClass() != orig(matcher.getClass())

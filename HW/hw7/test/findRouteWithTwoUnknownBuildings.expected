@@ -1,0 +1,14 @@
+Menu:
+	r to find a route
+	b to see a list of all buildings
+	q to quit
+
+Enter an option ('m' to see the menu): # Verify that the program prints 
+# "Unknown building: " + buildingName 
+# twice when both starting building and 
+# ending building are unknown.
+Abbreviated name of starting building: Abbreviated name of ending building: Unknown building: NBA
+Unknown building: NFL
+
+Enter an option ('m' to see the menu): 
+# terminate the program

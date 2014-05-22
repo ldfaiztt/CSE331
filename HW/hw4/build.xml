@@ -1,0 +1,25 @@
+<!--Minimal ant build file that needs to be created per pset.  You
+ mostly just have to use this as an example, and modify the project
+ name, and the also.compile property to be a comma-separated list of
+ other psets to compile in the shown fashion. -->
+
+<project name = "hw4" basedir = "../">
+  <property name = "hwname" value = "${ant.project.name}"/>
+  <property name = "hw" location = "${hwname}"/>
+  <property name = "also.compile" value = "utils/**/*.java hw3/**/*.java"/>
+  <property name="compile.exclude" value="hw4/nullness/*"/>
+  <property name = "checker.force" value = "true"/>
+  <property name = "copy.difftests" value = "yes"/>
+  <import file="../common.xml"/>
+
+  <target name = "nullness">
+    <available file = "${javac.location}"
+               property="build.fork"
+               value="yes"/>
+    <echo message = "Building nullness examples only"/>
+    <property name="compile.source" value="${hw}/nullness"/>
+    <property name="compile.include" value=""/>
+    <property name="compile.exclude" value=".svn,*/package.html,${staff.nocomp}"/>
+    <antcall target="check-nullness"/>
+  </target>
+</project>

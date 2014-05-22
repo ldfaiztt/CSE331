@@ -1,0 +1,11 @@
+# Load the Marvel dataset and search for an existing path.
+# To run this test, you will need to have downloaded the marvel dataset and
+# place it in src/hw6/data/marvel.tsv.
+
+loaded graph marvel
+
+path from OLD SKULL to PHARAOH RAMA-TUT:
+OLD SKULL to HAWK with weight 0.077
+HAWK to CAPTAIN AMERICA with weight 0.003
+CAPTAIN AMERICA to PHARAOH RAMA-TUT with weight 0.019
+total cost: 0.099

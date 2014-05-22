@@ -1,0 +1,6 @@
+# Check unknown commands.
+g
+b m
+
+# terminate the program
+q

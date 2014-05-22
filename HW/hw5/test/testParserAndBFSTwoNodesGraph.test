@@ -1,0 +1,12 @@
+# test parser and BFS on two nodes graph
+
+# build graph
+LoadGraph twoNodesGraph twoNodesGraph.tsv
+
+# check graph is built correctly
+ListNodes twoNodesGraph
+ListChildren twoNodesGraph node1
+ListChildren twoNodesGraph node2
+
+# check BFS
+FindPath twoNodesGraph node1 node2

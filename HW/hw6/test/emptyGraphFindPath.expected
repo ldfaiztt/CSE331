@@ -1,0 +1,8 @@
+# Tests find path on empty graph.
+
+# Create a graph
+created graph empty_graph
+
+# Find minimum-cost path on non-existing nodes
+unknown character a
+unknown character b

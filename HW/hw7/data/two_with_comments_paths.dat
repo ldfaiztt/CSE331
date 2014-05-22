@@ -1,0 +1,8 @@
+# paths from second apartment
+3,4
+# to first apartment
+	0,0: 5
+# paths from first apartment
+0,0
+# to second apartment
+	3,4: 5

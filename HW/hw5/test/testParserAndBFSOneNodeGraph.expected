@@ -1,0 +1,13 @@
+# test parser and BFS on one node graph
+
+# build graph
+loaded graph oneNodeGraph
+
+# check graph is built correctly
+oneNodeGraph contains: onlyNode
+the children of onlyNode in oneNodeGraph are:
+
+# check BFS
+path from onlyNode to onlyNode:
+unknown character Node2
+unknown character Node3

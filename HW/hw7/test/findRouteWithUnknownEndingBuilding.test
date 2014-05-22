@@ -1,0 +1,9 @@
+# Verify that the program prints 
+# "Unknown building: " + buildingName 
+# once when ending building is unknown.
+r
+CSE
+NFL
+
+# terminate the program
+q

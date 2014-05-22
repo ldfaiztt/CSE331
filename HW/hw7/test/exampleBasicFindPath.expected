@@ -1,0 +1,37 @@
+Menu:
+	r to find a route
+	b to see a list of all buildings
+	q to quit
+
+Enter an option ('m' to see the menu): # Verify that the program finds and correctly outputs the shortest path from
+# CSE to PAB.
+Abbreviated name of starting building: Abbreviated name of ending building: Path from Paul G. Allen Center for Computer Science & Engineering to Physics/Astronomy Building:
+	Walk 18 feet N to (2261, 1707)
+	Walk 90 feet W to (2218, 1696)
+	Walk 134 feet W to (2157, 1675)
+	Walk 200 feet SW to (2067, 1714)
+	Walk 21 feet W to (2055, 1718)
+	Walk 134 feet SW to (1996, 1743)
+	Walk 103 feet SW to (1952, 1766)
+	Walk 151 feet SW to (1889, 1797)
+	Walk 84 feet SW to (1852, 1813)
+	Walk 136 feet NW to (1821, 1756)
+	Walk 45 feet SW to (1801, 1765)
+	Walk 79 feet W to (1766, 1779)
+	Walk 41 feet N to (1759, 1760)
+	Walk 59 feet N to (1749, 1733)
+	Walk 27 feet SW to (1737, 1740)
+	Walk 72 feet W to (1703, 1731)
+	Walk 27 feet SW to (1691, 1737)
+	Walk 35 feet W to (1675, 1743)
+	Walk 141 feet N to (1677, 1676)
+	Walk 43 feet N to (1676, 1655)
+	Walk 22 feet W to (1666, 1656)
+	Walk 43 feet S to (1666, 1677)
+	Walk 166 feet W to (1586, 1678)
+	Walk 51 feet W to (1561, 1682)
+	Walk 35 feet S to (1561, 1698)
+Total distance: 1957 feet
+
+Enter an option ('m' to see the menu): 
+# All of your test scripts should end with q to terminate the program.

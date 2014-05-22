@@ -1,0 +1,6 @@
+# Verify that the program list all buildings' names 
+# (both abbreviated name and full name) correctly.
+b
+
+# terminate the program
+q

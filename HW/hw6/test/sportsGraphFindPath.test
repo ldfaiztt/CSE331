@@ -1,0 +1,7 @@
+# Tests find minimum-cost path on sports graph.
+
+# Load sports.tsv
+LoadGraph sports sports.tsv
+
+# Test find minimum-cost path not shortest path
+FindPath sports Michael Howard

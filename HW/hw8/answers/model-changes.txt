@@ -1,0 +1,12 @@
+Chun-Wei Chen
+CSE 331
+Homework 8
+06/06/13
+
+I added a map that map building's full name to its abbreviated name and 
+added a method that allows getting the abbreviated name by passing in 
+its full name. By doing so, the drop-down menu can show full name to 
+user while the view translates from full name to abbreviated name and 
+then to the coordinates internally to meet the type of arguments of 
+path finder. I also changed the return type of findShortestWalkingRoute 
+since view doesn't need to know anything related to DGraph.

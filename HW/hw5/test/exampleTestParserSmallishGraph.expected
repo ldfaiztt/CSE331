@@ -1,0 +1,5 @@
+# Test the parser on a graph that contains several nodes
+# with two edges each.
+
+loaded graph heroes
+the children of Ernst-the-Bicycling-Wizard in heroes are: Notkin-of-the-Superhuman-Beard(CSE331) Notkin-of-the-Superhuman-Beard(CSE403) Perkins-the-Magical-Singing-Instructor(CSE331)

@@ -1,0 +1,17 @@
+Chun-Wei Chen
+CSE 331
+Homework 4 - Problem 3
+05/07/13
+
+I used "0, 1, 2" case analysis mentioned in hints section 
+to come up with many combinations, such as empty graph, 
+one node graph, one node with reflexive edge graph, two 
+nodes with two edges graph, and so on, for testing. 
+I think I used clear-box testing to write tests since I've 
+tried to cover every line of the code. I added some tests 
+to the tests I wrote before writing implementation code 
+since I found myself underconstrained a few methods' spec. 
+For instance, I forgot to document @throws under the
+condition when the client tries to pass in non-existing nodes 
+as arguments of childrenOf and removeEdges; therefore, I 
+added some tests to cover those conditions. 

@@ -1,0 +1,11 @@
+# Test BFS on sports graph
+
+# build the graph
+LoadGraph sports sports.tsv
+
+# test BFS order
+# find the shortest path Howard to Michael
+FindPath sports Howard Michael
+
+# find the shortest path Michael to Howard
+FindPath sports Michael Howard

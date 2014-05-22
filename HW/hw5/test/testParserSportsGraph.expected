@@ -1,0 +1,12 @@
+# Test the parser on sports data to see 
+# if the graph is built correctly
+
+# Parse through the data and build the graph
+loaded graph sports
+
+# List nodes and edges to see if the graph 
+# is built correctly
+sports contains: Howard Jeff Michael
+the children of Michael in sports are: Jeff(MLB) Jeff(NBA)
+the children of Howard in sports are: Jeff(NFL) Jeff(NHL)
+the children of Jeff in sports are: Howard(NFL) Howard(NHL) Michael(MLB) Michael(NBA)

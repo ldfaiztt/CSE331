@@ -1,0 +1,19 @@
+# Tests adding two nodes, one reflexive edge 
+# and one edge between two nodes to graph.
+
+# Create a graph
+created graph two_nodes_two_edges_graph1
+
+# Add two nodes
+added node a to two_nodes_two_edges_graph1
+added node b to two_nodes_two_edges_graph1
+
+# Add two edges (including one reflexive edge)
+added edge AA from a to a in two_nodes_two_edges_graph1
+added edge AB from a to b in two_nodes_two_edges_graph1
+
+# Print the nodes in the graph, the outgoing edges from a, 
+# and outgoing edges from b
+two_nodes_two_edges_graph1 contains: a b
+the children of a in two_nodes_two_edges_graph1 are: a(AA) b(AB)
+the children of b in two_nodes_two_edges_graph1 are:

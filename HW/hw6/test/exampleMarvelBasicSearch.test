@@ -1,0 +1,7 @@
+# Load the Marvel dataset and search for an existing path.
+# To run this test, you will need to have downloaded the marvel dataset and
+# place it in src/hw6/data/marvel.tsv.
+
+LoadGraph marvel marvel.tsv
+
+FindPath marvel OLD_SKULL PHARAOH_RAMA-TUT

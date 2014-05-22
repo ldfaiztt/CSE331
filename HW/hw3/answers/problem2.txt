@@ -1,0 +1,25 @@
+Chun-Wei Chen
+CSE 331
+Homework 3
+04/19/13
+
+a. I only included a call to checkRep at the end of constructor since there's 
+   no mutator method in the class, the instance variables are declared as 
+   final (can only be initialized once), and all methods of arithmetic, 
+   differentiate and antidifferentiate return a new RatTerm object without 
+   modifying original object(s); therefore, checkRep at the end of constructor 
+   is sufficient to hold rep invariant.
+   
+b. isZero should be change, and I would negate the coeff and then compare the 
+   equality (using equals) with original coeff, which is more complex in terms 
+   of code clarity since it uses two method call to determine if coeff is zero. 
+   toString should add a check of isZero before checking e == 1 and then 
+   append 0 to output if isZero is true, which is more complex since it needs 
+   another condition check.
+   
+c. The constructor needs to be changed so that when passing in a NaN and any 
+   exponent should be NaN instead of NaN*x^expt.
+   
+I prefer both since the rep invariant allows us to avoid terms such as 0*x^3 
+and NaN*x^5 so that we don't need to worry about different representation of 
+them when doing add, sub, mul, or div.																			

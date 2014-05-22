@@ -1,0 +1,16 @@
+# Same as twoNodeGraph.test, but reverse the 
+# order of node adding to test if it prints 
+# out in alphabetical order
+
+# Create a graph
+CreateGraph two_nodes_graph_alphabetical
+
+# Add two nodes in reverse alphabetical order
+AddNode two_nodes_graph_alphabetical b
+AddNode two_nodes_graph_alphabetical a
+
+# Print the nodes in the graph, the outgoing edges from a, 
+# and outgoing edges from b
+ListNodes two_nodes_graph_alphabetical
+ListChildren two_nodes_graph_alphabetical a
+ListChildren two_nodes_graph_alphabetical b

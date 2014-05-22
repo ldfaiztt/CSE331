@@ -1,0 +1,12 @@
+# Test the parser on sports data to see 
+# if the graph is built correctly
+
+# Parse through the data and build the graph
+LoadGraph sports sports.tsv
+
+# List nodes and edges to see if the graph 
+# is built correctly
+ListNodes sports
+ListChildren sports Michael
+ListChildren sports Howard
+ListChildren sports Jeff

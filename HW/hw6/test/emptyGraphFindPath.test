@@ -1,0 +1,7 @@
+# Tests find path on empty graph.
+
+# Create a graph
+CreateGraph empty_graph
+
+# Find minimum-cost path on non-existing nodes
+FindPath empty_graph a b

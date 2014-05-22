@@ -1,0 +1,142 @@
+HOMEWORK 4 GRADING KEY
+
+Problem 1 - Written Exercises
+#1A (IntQueue1)
+
+    1-AF-O: Not describing ordering of input with respect to insertion in AF(-.5)
+
+    1-AF-S: Not mapping all concrete fields to abstract representations in AF(-.5)
+
+    1-AF-F: Abstraction function does not map concrete representation to abstract value or does not sufficiently describe abstract value - e.g., which item in the list is the front of the queue?(-1)
+
+    1-AF-R: Concrete value (what this object is) and abstract value (what it represents) are reversed (-0 if they otherwise have the right idea)
+
+    1-RI-S: RI does not describe a verifiable invalid state. (Sometimes this means it describes something that should be in the AF.) If you can't verify it in checkRep(), for example because it describes something about the object relative to time, it's probably more of AF material. (-0 or -0.5 at your discretion)
+
+    1-RI-T: trivial condition in RI - enforced by the data structure used or the Java type system (-0)
+
+#1B (IntQueue2)
+
+    1-AF-M: Excluded or did not have a clear interpretation of wrap around effect of circular array implementation (-.5)
+
+    1-RI-M: Missing element of RI (-.5)
+
+#2
+
+    1-B: Incorrect abstract representation equivalence(-.5 per)
+
+#3
+
+    1-C: Incorrect solution with insufficient justification (-1)
+
+    1-C-R: Doesn't state whether the method or constructor could expose the representation. (-4/4 if they never answered correctly)
+
+
+
+Problem 2 - Graph Specification
+Javadoc:
+
+    J-MC: Don't include "modifies" in the constructor. The constructor isn't modifying a pre-existing object, just creating a new one for the user, so you only need "effects."
+
+    J-M: Missing Javadoc for public method (-2)
+
+    J-MT: Missing Javadoc tag. (-1)
+
+    S-I: An API that accepts/returns Strings (the data in nodes) in one place and Node objects somewhere else is inconsistent with itself. Similar case for Edge. (-1)
+
+    J-P: Document the significance of your method parameters using @param tags in the format: @param variableName description. (See IntQueue1/2.java for an example) (-0 because HW3 code didn't use param. Did we cover it in class?)
+
+    J-Pre: Document preconditions with @requires. If some value of a parameter would violate the representation, the client needs to know about those forbidden values. (It's also acceptable to use @throws instead of @requires if you explicitly check for those values and throw an exception.) (-0. Should be -2 but I realized I wasn't regularly checking for this, and it didn't seem practical to do so.)
+
+    J-V: @modifies and @effects should only list objects visible to the client. (-2)
+
+    J-I: Instance fields should not be included in Javadoc. (-1)
+
+    J-E: you should describe what the actual effects of your method was (what was changed about the object) in @effects. Some people who received this comment switched the usage of modifies and effects. (-1)
+
+    J-S: A specfield of "graph" for a Graph class is not all that helpful for the client. What does the graph contain? Those should be your spec fields. (-1)
+
+    J-S2: Some students have specfields like "node" and "edge" for graph. Since a graph can store many nodes and many edges, not just one, the more appropriate specfields would be "nodes" and "edges," each representing some collection of data. (-0)
+
+    J-D: More detail is needed in Javadoc comments. (-1)
+
+    J-O: Give an overall description of each method in its Javadoc comments. (-0)
+
+Choice of methods:
+
+    J-F: Encapsulation: Use getter/setter methods for public classes, especially when fields are non-final - don't allow the clients to modify the fields directly (it prevents you from changing the implementation later). (-2)
+
+    J-R: "Redundant" methods - too many methods that are very similar in function, varying only in the method signature. Avoid the "everything but the kitchen sink" API - remember that you can always add methods later, but you can never remove them from a public API because some client will be depending on them. (-1)
+
+
+
+Problem 3 - Tests
+
+    T-DS: Testing strategy for specification tests not apparent. (-1)
+
+    T-S: Test granularity: A single JUnit method should test a single input subdomain of a method, not all possible inputs. (-1)
+
+    T-O: Test granularity: Tests excessively combined different methods(-1)
+
+    T-M: Missing JUnit tests for class. (-2)
+
+    T-F: Too few tests; rarely is one test per method sufficient. What are all the input partitions that need to be tested? (-1)
+
+    T-A: Test all methods. (-1...-3, with -3 being if 4 or more untested methods across all classes)
+
+    T-C: You should include comments in your JUnit tests to make them more readable. (I think this was usually -0.)
+
+    T-AS2: use the most appropriate assertion, e.g. assertEquals() instead of assertTrue() to test equality (-0 because it's unrealistic to read everyone's code for this - but mark if you notice it.)
+
+    T-NA: No assertions in test - every test needs to verify some correct behavior. (-0 for same reason as above)
+
+    T-AS: a regular assert() is not a JUnit method. It will only cause a test to fail in that it throws an exception if it is false. Tests should use assertEquals(), assertTrue(), ... (-0)
+
+
+
+Problem 4 - Implementation
+
+    I-C: Declare fields as interface type instead of concrete type (e.g. Map instead of HashMap)
+
+    R: Redundant, e.g. not chaining constructors, common procedure which is not factored into a private method, redundant field. (deduction based on severity)
+
+    C: Comment all methods, even private methods. (-1)
+
+    checkRep() outputs to System.out (-2)
+
+    ADT outputs to System.out (-2)
+
+    T-H: Use HashMap instead of TreeMaps (and HashSet instead of TreeSet). HashMaps have much better performance; TreeMaps are rarely what you want or need. (Sortedness required for test driver should not be enforced in graph, as it is a client application need.) (-0)
+
+    LL-AL: Use ArrayList instead of LinkedList. ArrayList is faster, and often can be pre-sized in order to avoid having to resize array. (-0)
+
+    C-L: When constructing a new List from a previously-existing Collection, you can use the List(Collection<?> c) constructor - no need to iterate over the entire list. (-0)
+
+    IM-F: Having non final mutable fields in a immutable class and giving the client access to change those fields with a setter method. (-1)
+
+    IM-F2: it's a good idea (for defensive programming) to declare fields final in an immutable class - ensures that the fields can never be redefined
+
+    DF: It's a good idea to check for invalid inputs at the beginning of your methods and throw an exception if they are violated. (Don't document the exception in @throws, however, if the input is already forbidden in @requires.) It doesn't affect your program correctness, but it is a good defensive programming strategy. (-0)
+
+    I-DS: choice of data structures: is this the most appropriate data structure (Sets, Lists, etc.) for the purpose?
+
+    H: helper methods should be private. (-0)
+
+    V: use more descriptive variable names.
+
+    I-E: Incorrect implementation of equals.
+
+Abstraction function, representation invariant
+
+    AF-M: Missing abstraction function. (-2)
+
+    AF-Q: Abstraction function hard to understand. (can be -0 depending on severity)
+
+    AF-F: Abstraction function does not map concrete representation to abstract value or does not sufficiently describe abstract value (i.e. If you have a @specfield edges : Set, then the AF should describe how the set of all edges is represented) (-1)
+
+    RI-M: Missing Representation Invariant (-2)
+
+    RI-F: Representation invariants should be stated in terms of instance fields. (-1)
+
+    RI-C: Representation invarient does not describe that children stored in an Edge class must be contained in the set of nodes. (-1)
+    RI-U: Unnecessary expressions in representation invariant - ensured by Java's type system or by the data structures used. (For example, stating that there cannot be duplicate nodes when using a Set, which only stores unique objects.) (-0)

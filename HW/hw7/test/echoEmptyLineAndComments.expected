@@ -1,0 +1,11 @@
+Menu:
+	r to find a route
+	b to see a list of all buildings
+	q to quit
+
+Enter an option ('m' to see the menu): # Check the program echo empty lines and 
+# lines starting with # character.
+
+# seems like no problem
+
+# terminate program

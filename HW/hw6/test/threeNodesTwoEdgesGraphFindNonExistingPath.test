@@ -1,0 +1,7 @@
+# Tests find path on three_nodes_two_edges_graph.
+
+# Load threeNodesTwoEdgesGraph.tsv
+LoadGraph three_nodes_two_edges_graph threeNodesTwoEdgesGraph.tsv
+
+# Find minimum-cost path from node1 to node3
+FindPath three_nodes_two_edges_graph node1 node3

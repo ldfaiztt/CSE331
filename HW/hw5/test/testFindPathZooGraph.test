@@ -1,0 +1,16 @@
+# Test BFS on zoo graph
+
+# Parse through the data and build the graph
+LoadGraph zoos zoos.tsv
+
+# Find the shortest path Elephant to Tiger
+FindPath zoos Elephant Tiger
+
+# Find the shortest path Tiger to Elephant
+FindPath zoos Tiger Elephant
+
+# Find the shortest path Penguin to Monkey
+FindPath zoos Penguin Monkey
+
+# Find the shortest path Monkey to Monkey
+FindPath zoos Monkey Monkey

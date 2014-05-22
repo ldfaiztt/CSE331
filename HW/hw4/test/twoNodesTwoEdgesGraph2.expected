@@ -1,0 +1,18 @@
+# Tests adding two nodes, two edges between two nodes to graph.
+
+# Create a graph
+created graph two_nodes_two_edges_graph2
+
+# Add two nodes
+added node a to two_nodes_two_edges_graph2
+added node b to two_nodes_two_edges_graph2
+
+# Add two edges
+added edge AB from a to b in two_nodes_two_edges_graph2
+added edge BA from b to a in two_nodes_two_edges_graph2
+
+# Print the nodes in the graph, the outgoing edges from a, 
+# and outgoing edges from b
+two_nodes_two_edges_graph2 contains: a b
+the children of a in two_nodes_two_edges_graph2 are: b(AB)
+the children of b in two_nodes_two_edges_graph2 are: a(BA)

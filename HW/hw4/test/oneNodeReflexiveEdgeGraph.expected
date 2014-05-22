@@ -1,0 +1,14 @@
+# Tests adding one node, reflexive edge to graph
+
+# Create a graph
+created graph one_node_one_edge_graph
+
+# Add a node
+added node a to one_node_one_edge_graph
+
+# Add an edge
+added edge AA from a to a in one_node_one_edge_graph
+
+# Print the nodes in the graph and the outgoing edges from a
+one_node_one_edge_graph contains: a
+the children of a in one_node_one_edge_graph are: a(AA)

@@ -1,0 +1,10 @@
+# Tests find minimum-cost path on sports graph.
+
+# Load sports.tsv
+loaded graph sports
+
+# Test find minimum-cost path not shortest path
+path from Michael to Howard:
+Michael to Jeff with weight 0.333
+Jeff to Howard with weight 0.333
+total cost: 0.667

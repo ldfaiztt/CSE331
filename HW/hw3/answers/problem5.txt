@@ -1,0 +1,10 @@
+Chun-Wei Chen
+CSE 331
+Homework 3
+04/19/13
+
+My four favorite polynomial equations:
+x^3-1
+6*x^5+5*x^4+4*x^3+3*x^2+2*x+1
+x^2+2*x+1
+x^8+3*x^6+5*x^4+7*x^2+9

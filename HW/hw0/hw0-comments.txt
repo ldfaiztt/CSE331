@@ -1,0 +1,152 @@
+====================================
+A note about efficiency
+====================================
+
+When we ask about different implementations, don't only think of computation 
+time (aka runtime efficiency), also think about human time. Often, one 
+implementation may be faster but it is not worth implementing because it 
+will take longer and be harder to maintain and debug. Computers double in speed every 18 months, humans don't.
+
+So a general rule of thumb for this class is to never make a design decision which makes your code significantly more complicated or redundant for the sole purpose of improving run-time performance.
+
+
+====================================
+General Style
+====================================
+
+FOR
+Favor for-each loops over for loops or iterator while loops; they make your 
+code cleaner and more readable.
+
+TODO
+You should remove placeholder comments like “// TODO: implement” from the 
+code you turn in. 
+
+BOOL_ZEN
+Consider the following if statement:
+
+if (ballContainer.contains(b)){
+   return true;
+} else {
+   return false;
+}
+
+This should be simplified, using boolean zen, to:
+
+return ballContainer.contains(b);
+
+DECL
+Declare objects with their interface type e.g.:
+
+List<String> foo = new ArrayList<String>();
+
+
+====================================
+Problem 4
+====================================
+
+CONST
+In RandomHello, if you used an array or list to store your greetings, it is
+redundant to call r.nextInt(5). Instead, call r.nextInt(greetingList.size()).
+This way, if the size of the list changes your code will continue to work.
+
+
+====================================
+Problem 6
+====================================
+
+FIB_BUGS
+testThrowsIllegalArgumentException and testBaseCase both fail due to the 
+same bug (on line 24). testInductiveCase fails due to two bugs (line 26 and 
+29).
+
+
+====================================
+Problem 7a
+====================================
+
+THIS
+Some students solved the volume naming collision by changing the
+name of the parameter. We gave full credit for this, but it is better style
+to prefix the field with “this” i.e. “this.volume = volume;”.
+
+
+====================================
+Problem 7c
+====================================
+
+D_CTOR
+Many students implemented a Ball Comparator that used multiple if branches 
+to determine what to return. A better implementation uses the Double 
+Comparator provided by Java:
+
+public int Compare(Ball b1, Ball b2) {
+   return Double.compare
+}
+
+IMPL_DIFF
+The assignment asked you to come up with two different implementations that 
+differed in their implementation of Box. As the assignment says, specifying 
+two different ways to sort the Balls does not satisfy this requirement.
+
+Putting multiple Balls into a data structure such as a PriorityQueue and 
+then removing them is actually just another type of sort called a heap sort.
+
+An example of a correct answer on this question would be:
+
+1. Use an auxilliary collection to sort the balls as soon as they are added to the Box.
+2. Sort the balls when getBallsFromSmallest() is called.
+
+IMPL_BEST
+Part of the assignment was to explain which implementation approach to 
+Box.getBallsFromSmallest() you thought was better and why.  Ideally, we were 
+looking for a discussion of runtime and/or space performance, but an 
+acceptable answer was one that made it obvious you thought about the trade 
+offs between your two proposed approaches.
+
+HEAPSORT
+Adding items to a priority queue and then removing them is actually another 
+type of sort called a heapsort.
+
+TREE
+Be very careful when using Comparable or Comparator with TreeSet (or 
+TreeMap). To sort Balls in getBallsFromSmallest(), many students usded an 
+implementation of Comparator<Ball> in conjunction with TreeSet<Ball>. The 
+problem with this is that TreeSet, like Set, does not allow the same element 
+to be inserted more than once. Furthermore, TreeSets use the 
+Comparator.compare() method provided to them to decide if two elements are 
+in fact the same (instead of using equals()); if Comparator.compare() 
+returns 0, then the elements are considered the same. Therefore, if you 
+attempt to place two different Balls of the SAME volume in a TreeSet, only 
+one will be added because CompareBalls.compare() returns 0 for same-sized 
+balls.
+
+COMP
+A comparator should (almost) always return 0 when given two equal values. 
+The implementation of Comparable<Ball> used by Box does not satisfy the 
+specification for Comparable, and is used to break the set property of a 
+TreeSet (by allowing the insertion of duplicates). You might consider using 
+a List and Collections.sort instead, or otherwise keeping track of the 
+number of duplicated Balls that have been inserted into the TreeSet.
+
+TRUNC
+Remember that doubles get truncated when cast to ints. This caused a subtle 
+bug in a number of students' BallComparator where there was a line like:
+
+    return (int) (b1.getVolume() - b2.getVolume());
+
+If the difference is between -1 and 1, it is cast to 0. This causes the 
+Comparator to incorrectly claim that two Balls with volumes of, say, 1.4 and 
+1.5 have equal volume. A few resourceful students implemented compare() 
+correctly in one short, beautiful line using a static method in Double. Try 
+to find it in for yourself in the Java API (linked above).
+
+SORT_LIST
+A number of students opted to use a Collection of Balls in addition to 
+BallContainer in their Box implementation. Although this is duplicating 
+information (because you have to manage two sets of the same Ball 
+information), we accepted the rationale that this approach improves 
+efficiency. However, in order to see the efficiency benefits of this method, 
+Box must sort the Collection immediately when a new Ball is added. If the 
+auxilliary Ball Collection is sorted during getBallsFromSmallest() anyway, 
+you are left with duplicate data that does not provide any speedup.

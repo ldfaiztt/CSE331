@@ -1,0 +1,30 @@
+Written response:
+
+  CHECKREP - any changes in the rep invariant must be reflected by changes in the checkrep() method.
+
+Code Style and readability:
+
+  LIST_CONST - List defines a constructor which accepts a list argument and builds a duplicate,
+  identical list. It is preferable to use this constructor, rather than building an empty list
+  and copying each element explicitly.
+
+  INTERFACE - use interfaces as variable & field types wherever possible.
+
+  DEGREE - In RatPoly.degree() you should rely on the RI which states that the highest degree of
+  a polynomial will be at the start of terms. Thus, it is not necessary to iterate over all of
+  terms to find the highest degree.
+
+  FOREACH - prefer for-each loops when iterating over every element in a list or other iterable
+  data structure
+
+  CHECKREP - check rep should be called at the end of any method which changes object state. For
+  immutable objects (like RatPoly), this is usually just the constructor. (a notable exception, is
+  that checkrep can be removed from production code if it represents a serious performance cost)
+
+  REINVENT - Use your libraries, including the ones you’ve already written. Ex: Add and subtract
+  are very similar for RatPoly, you can use one to solve the other with a minimum of code, rather
+  than re-implementing the full algorithm.
+
+  STACK_GET - Know your libraries. using pop & push makes getNthFromTop method less clear and
+  less efficient than it otherwise might be. Java.util.Stack supports other methods which are
+  better suited to the job you’re trying to do in getNthFromTop. (esp .elementAt and .get)

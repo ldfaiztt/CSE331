@@ -1,0 +1,20 @@
+# Test MarvelPaths doesn't allow adding reflexive edge
+
+# Parse through the data and build the graph
+loaded graph three_nodes_graph
+
+# List nodes and edges to see if the graph is built correctly
+three_nodes_graph contains: a b c
+the children of a in three_nodes_graph are: b(AB)
+the children of b in three_nodes_graph are: a(AB) c(BC)
+the children of c in three_nodes_graph are: b(BC)
+
+# Find the shortest path a to c
+path from a to c:
+a to b via AB
+b to c via BC
+
+# Find the shortest path c to a
+path from c to a:
+c to b via BC
+b to a via AB

@@ -1,0 +1,21 @@
+# Test adding two nodes, two reflexive edges 
+# and two edges between two nodes.
+
+# Create a graph
+CreateGraph two_nodes_complete_graph
+
+# Add two nodes
+AddNode two_nodes_complete_graph a
+AddNode two_nodes_complete_graph b
+
+# Add four edges (including tow reflexive edges)
+AddEdge two_nodes_complete_graph a a AA
+AddEdge two_nodes_complete_graph a b AB
+AddEdge two_nodes_complete_graph b a BA
+AddEdge two_nodes_complete_graph b b BB
+
+# Print the nodes in the graph, the outgoing edges from a, 
+# and outgoing edges from b
+ListNodes two_nodes_complete_graph
+ListChildren two_nodes_complete_graph a
+ListChildren two_nodes_complete_graph b

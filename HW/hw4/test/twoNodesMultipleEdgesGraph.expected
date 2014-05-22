@@ -1,0 +1,21 @@
+# Tests adding two nodes, multiple edges to graph.
+
+# Create a graph
+created graph two_nodes_multiple_edges_graph
+
+# Add two nodes
+added node a to two_nodes_multiple_edges_graph
+added node b to two_nodes_multiple_edges_graph
+
+# Add five edges
+added edge AA from a to a in two_nodes_multiple_edges_graph
+added edge AB1 from a to b in two_nodes_multiple_edges_graph
+added edge AB2 from a to b in two_nodes_multiple_edges_graph
+added edge BA from b to a in two_nodes_multiple_edges_graph
+added edge BB from b to b in two_nodes_multiple_edges_graph
+
+# Print the nodes in the graph, the outgoing edges from a, 
+# and outgoing edges from b
+two_nodes_multiple_edges_graph contains: a b
+the children of a in two_nodes_multiple_edges_graph are: a(AA) b(AB1) b(AB2)
+the children of b in two_nodes_multiple_edges_graph are: a(BA) b(BB)

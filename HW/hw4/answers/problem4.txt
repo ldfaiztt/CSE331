@@ -1,0 +1,14 @@
+Chun-Wei Chen
+CSE 331
+Homework 4 - Problem 4
+05/07/13
+
+The advantages of using collection of edges is O(1) time complexity when 
+adding a new edge. The advantages of using an adjacency list is O(1) time 
+complexity when adding a new vertex or adding a new edge. The advantages 
+of using an adjacency matrix is O(1) time complexity when adding/removing 
+edge or querying if the edge exists. I used a TreeSet to represent each 
+node's outgoing edges and map each node to its set of edges using TreeMap 
+since TreeMap and TreeSet can store the data in alphabetical order and 
+guarantee O(logn) time complexity on basic operations, such as add, 
+remove, and contains.

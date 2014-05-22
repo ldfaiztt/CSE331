@@ -1,0 +1,12 @@
+# Tests find path on three_nodes_two_edges_graph.
+
+# Load threeNodesTwoEdgesGraph.tsv
+loaded graph three_nodes_two_edges_graph
+
+# Find minimum-cost path from node1 to node2 and from node2 to node1
+path from node1 to node2:
+node1 to node2 with weight 1.000
+total cost: 1.000
+path from node2 to node1:
+node2 to node1 with weight 1.000
+total cost: 1.000

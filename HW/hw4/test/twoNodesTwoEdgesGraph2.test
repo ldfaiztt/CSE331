@@ -1,0 +1,18 @@
+# Tests adding two nodes, two edges between two nodes to graph.
+
+# Create a graph
+CreateGraph two_nodes_two_edges_graph2
+
+# Add two nodes
+AddNode two_nodes_two_edges_graph2 a
+AddNode two_nodes_two_edges_graph2 b
+
+# Add two edges
+AddEdge two_nodes_two_edges_graph2 a b AB
+AddEdge two_nodes_two_edges_graph2 b a BA
+
+# Print the nodes in the graph, the outgoing edges from a, 
+# and outgoing edges from b
+ListNodes two_nodes_two_edges_graph2
+ListChildren two_nodes_two_edges_graph2 a
+ListChildren two_nodes_two_edges_graph2 b
